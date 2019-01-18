@@ -69,6 +69,21 @@ public class LocationComponentOptions implements Parcelable {
    */
   private static final float TRACKING_ANIMATION_DURATION_MULTIPLIER_DEFAULT = 1.1f;
 
+  /**
+   * Default duration of a single LocationComponent circle pulse.
+   */
+  private static final long CIRCLE_PULSING_DURATION_DEFAULT_MS = 2300;
+
+  /**
+   * Default opacity of the LocationComponent circle when it ends a single pulse.
+   */
+  private static final float CIRCLE_PULSING_FINAL_ALPHA_DEFAULT = 1f;
+
+  /**
+   * Default maximum radius of the LocationComponent circle when it's pulsing.
+   */
+  public static final float CIRCLE_PULSING_MAX_RADIUS_DEFAULT = 35f;
+
   private float accuracyAlpha;
   private int accuracyColor;
   private int backgroundDrawableStale;
@@ -114,6 +129,13 @@ public class LocationComponentOptions implements Parcelable {
   private float trackingAnimationDurationMultiplier;
   private boolean compassAnimationEnabled;
   private boolean accuracyAnimationEnabled;
+  private Boolean pulsingCircleEnabled;
+  private Boolean pulsingCircleFadeEnabled;
+  private Integer pulseColor;
+  private float pulseSingleDuration;
+  private float pulsingCircleMaxRadius;
+  private float pulseAlpha;
+  private String pulseInterpolator;
 
   public LocationComponentOptions(
     float accuracyAlpha,
@@ -148,7 +170,14 @@ public class LocationComponentOptions implements Parcelable {
     String layerBelow,
     float trackingAnimationDurationMultiplier,
     boolean compassAnimationEnabled,
-    boolean accuracyAnimationEnabled) {
+    boolean accuracyAnimationEnabled,
+    Boolean pulsingCircleEnabled,
+    Boolean pulsingCircleFadeEnabled,
+    Integer pulsingCircleColor,
+    float pulsingCircleDuration,
+    float pulsingCircleMaxRadius,
+    float pulsingCircleAlpha,
+    String pulsingCircleInterpolator) {
     this.accuracyAlpha = accuracyAlpha;
     this.accuracyColor = accuracyColor;
     this.backgroundDrawableStale = backgroundDrawableStale;
@@ -185,6 +214,13 @@ public class LocationComponentOptions implements Parcelable {
     this.trackingAnimationDurationMultiplier = trackingAnimationDurationMultiplier;
     this.compassAnimationEnabled = compassAnimationEnabled;
     this.accuracyAnimationEnabled = accuracyAnimationEnabled;
+    this.pulsingCircleEnabled = pulsingCircleEnabled;
+    this.pulsingCircleFadeEnabled = pulsingCircleFadeEnabled;
+    this.pulseColor = pulsingCircleColor;
+    this.pulseSingleDuration = pulsingCircleDuration;
+    this.pulsingCircleMaxRadius = pulsingCircleMaxRadius;
+    this.pulseAlpha = pulsingCircleAlpha;
+    this.pulseInterpolator = pulsingCircleInterpolator;
   }
 
   /**
@@ -301,6 +337,35 @@ public class LocationComponentOptions implements Parcelable {
     builder.accuracyAnimationEnabled = typedArray.getBoolean(
       R.styleable.mapbox_LocationComponent_mapbox_accuracyAnimationEnabled, true
     );
+
+    builder.pulsingCircleEnabled = typedArray.getBoolean(
+      R.styleable.mapbox_LocationComponent_mapbox_pulsingLocationCircleEnabled, false
+    );
+
+    builder.pulsingCircleFadeEnabled = typedArray.getBoolean(
+      R.styleable.mapbox_LocationComponent_mapbox_pulsingLocationCircleFadeEnabled, true
+    );
+
+    if (typedArray.hasValue(R.styleable.mapbox_LocationComponent_mapbox_pulsingLocationCircleColor)) {
+      builder.pulsingCircleColor(typedArray.getColor(
+        R.styleable.mapbox_LocationComponent_mapbox_pulsingLocationCircleColor,
+        -1));
+    }
+
+    builder.pulsingCircleDuration = typedArray.getFloat(
+      R.styleable.mapbox_LocationComponent_mapbox_pulsingLocationCircleDuration, CIRCLE_PULSING_DURATION_DEFAULT_MS
+    );
+
+    builder.pulsingCircleMaxRadius = typedArray.getFloat(
+        R.styleable.mapbox_LocationComponent_mapbox_pulsingLocationCircleRadius, CIRCLE_PULSING_MAX_RADIUS_DEFAULT
+    );
+
+    builder.pulsingCircleAlpha = typedArray.getFloat(
+      R.styleable.mapbox_LocationComponent_mapbox_pulsingLocationCircleAlpha, CIRCLE_PULSING_FINAL_ALPHA_DEFAULT
+    );
+
+    builder.pulsingCircleInterpolator = typedArray.getString(
+      R.styleable.mapbox_LocationComponent_mapbox_pulsingLocationCircleInterpolator);
 
     typedArray.recycle();
 
@@ -740,6 +805,71 @@ public class LocationComponentOptions implements Parcelable {
     return accuracyAnimationEnabled;
   }
 
+  /**
+   * Enable or disable the LocationComponent's pulsing circle.
+   *
+   * @return whether the LocationComponent's pulsing circle is enabled
+   */
+  public Boolean pulseEnabled() {
+    return pulsingCircleEnabled;
+  }
+
+
+  /**
+   * Enable or disable fading of the LocationComponent's pulsing circle. If it fades, the circle's
+   * opacity decreases as its radius increases.
+   *
+   * @return whether fading of the LocationComponent's pulsing circle is enabled
+   */
+  public Boolean pulsingCircleFadeEnabled() {
+    return pulsingCircleFadeEnabled;
+  }
+
+  /**
+   * Color of the LocationComponent's pulsing circle as it pulses.
+   *
+   * @return the current set color of the circle
+   */
+  public Integer pulseColor() {
+    return pulseColor;
+  }
+
+  /**
+   * The number of milliseconds it takes for a single pulse of the LocationComponent's pulsing circle.
+   *
+   * @return the current set length of time for a single pulse
+   */
+  public float pulseSingleDuration() {
+    return pulseSingleDuration;
+  }
+
+  /**
+   * The maximum radius that a single pulse should expand the LocationComponent's pulsing circle to.
+   *
+   * @return the maximum radius that the pulsing circle will expand to.
+   */
+  public float pulseMaxRadius() {
+    return pulsingCircleMaxRadius;
+  }
+
+  /**
+   * The opacity of the LocationComponent's circle as it pulses.
+   *
+   * @return the current set opacity of the LocationComponent's circle
+   */
+  public float pulseAlpha() {
+    return pulseAlpha;
+  }
+
+  /**
+   * The interpolator type of animation for the movement of the LocationComponent's circle
+   *
+   * @return the current set type of animation interpolator for the pulsing circle
+   */
+  public String pulseInterpolator() {
+    return pulseInterpolator;
+  }
+
   @NonNull
   @Override
   public String toString() {
@@ -774,7 +904,13 @@ public class LocationComponentOptions implements Parcelable {
       + "trackingMultiFingerMoveThreshold=" + trackingMultiFingerMoveThreshold + ", "
       + "layerAbove=" + layerAbove
       + "layerBelow=" + layerBelow
-      + "trackingAnimationDurationMultiplier=" + trackingAnimationDurationMultiplier
+      + "pulsingCircleEnabled=" + pulsingCircleEnabled
+      + "pulsingCircleFadeEnabled=" + pulsingCircleFadeEnabled
+      + "pulseColor=" + pulseColor
+      + "pulseSingleDuration=" + pulseSingleDuration
+      + "pulsingCircleMaxRadius=" + pulsingCircleMaxRadius
+      + "pulseAlpha=" + pulseAlpha
+      + "pulseInterpolator=" + pulseInterpolator
       + "}";
   }
 
@@ -892,6 +1028,35 @@ public class LocationComponentOptions implements Parcelable {
     if (layerAbove != null ? !layerAbove.equals(options.layerAbove) : options.layerAbove != null) {
       return false;
     }
+
+    if (pulsingCircleEnabled != options.pulsingCircleEnabled) {
+      return false;
+    }
+
+    if (pulsingCircleFadeEnabled != options.pulsingCircleFadeEnabled) {
+      return false;
+    }
+    if (pulseColor != null ? !pulseColor.equals(options.pulseColor) :
+      options.pulseColor() != null) {
+      return false;
+    }
+    if (Float.compare(options.pulseSingleDuration, pulseSingleDuration) != 0) {
+      return false;
+    }
+
+    if (Float.compare(options.pulsingCircleMaxRadius, pulsingCircleMaxRadius) != 0) {
+      return false;
+    }
+
+    if (Float.compare(options.pulseAlpha, pulseAlpha) != 0) {
+      return false;
+    }
+
+    if (pulseInterpolator != null ? !pulseInterpolator.equals(options.pulseInterpolator)
+        : options.pulseInterpolator != null) {
+      return false;
+    }
+
     return layerBelow != null ? layerBelow.equals(options.layerBelow) : options.layerBelow == null;
   }
 
@@ -933,6 +1098,13 @@ public class LocationComponentOptions implements Parcelable {
       ? Float.floatToIntBits(trackingAnimationDurationMultiplier) : 0);
     result = 31 * result + (compassAnimationEnabled ? 1 : 0);
     result = 31 * result + (accuracyAnimationEnabled ? 1 : 0);
+    result = 31 * result + (pulsingCircleEnabled ? 1 : 0);
+    result = 31 * result + (pulsingCircleFadeEnabled ? 1 : 0);
+    result = 31 * result + (pulseColor != null ? pulseColor.hashCode() : 0);
+    result = 31 * result + (pulseSingleDuration != +0.0f ? Float.floatToIntBits(pulseSingleDuration) : 0);
+    result = 31 * result + (pulsingCircleMaxRadius != +0.0f ? Float.floatToIntBits(pulsingCircleMaxRadius) : 0);
+    result = 31 * result + (pulseAlpha != +0.0f ? Float.floatToIntBits(pulseAlpha) : 0);
+    result = 31 * result + (pulseInterpolator != null ? pulseInterpolator.hashCode() : 0);
     return result;
   }
 
@@ -973,7 +1145,14 @@ public class LocationComponentOptions implements Parcelable {
           in.readString(),
           in.readFloat(),
           in.readInt() == 1,
-          in.readInt() == 1
+          in.readInt() == 1,
+          in.readInt() == 1,
+          in.readInt() == 1,
+          in.readInt() == 0 ? in.readInt() : null,
+          in.readFloat(),
+          in.readFloat(),
+          in.readFloat(),
+          in.readString()
         );
       }
 
@@ -1073,6 +1252,18 @@ public class LocationComponentOptions implements Parcelable {
     dest.writeFloat(trackingAnimationDurationMultiplier);
     dest.writeInt(compassAnimationEnabled() ? 1 : 0);
     dest.writeInt(accuracyAnimationEnabled() ? 1 : 0);
+    dest.writeInt(pulseEnabled() ? 1 : 0);
+    dest.writeInt(pulsingCircleFadeEnabled() ? 1 : 0);
+    if (pulseColor() == null) {
+      dest.writeInt(1);
+    } else {
+      dest.writeInt(0);
+      dest.writeInt(pulseColor());
+    }
+    dest.writeFloat(pulseSingleDuration());
+    dest.writeFloat(pulseMaxRadius());
+    dest.writeFloat(pulseAlpha());
+    dest.writeString(pulseInterpolator());
   }
 
   @Override
@@ -1108,6 +1299,32 @@ public class LocationComponentOptions implements Parcelable {
           + "Choose one or the other.");
       }
 
+      if (locationComponentOptions.pulseEnabled() == null) {
+        String pulsingSetupError = "";
+        if (locationComponentOptions.pulsingCircleFadeEnabled() != null) {
+          pulsingSetupError += " pulsingCircleFadeEnabled";
+        }
+        if (locationComponentOptions.pulseColor() != null) {
+          pulsingSetupError += " pulsingCircleColor";
+        }
+        if ((Float) locationComponentOptions.pulseSingleDuration() != null) {
+          pulsingSetupError += " pulsingCircleDuration";
+        }
+        if ((Float) locationComponentOptions.pulseMaxRadius() != null) {
+          pulsingSetupError += " pulsingCircleMaxRadius";
+        }
+        if (locationComponentOptions.pulseAlpha() >= 0 && locationComponentOptions.pulseAlpha() <= 1) {
+          pulsingSetupError += " pulsingCircleAlpha";
+        }
+        if (locationComponentOptions.pulseInterpolator() != null) {
+          pulsingSetupError += " pulsingCircleInterpolator";
+        }
+        if (!pulsingSetupError.isEmpty()) {
+          throw new IllegalStateException("You've set up the following pulsing circle options but have not enabled"
+              + " the pulsing circle via the LocationComponentOptions builder:"
+              + pulsingSetupError + ". Enable the pulsing" + " circle if you're going to set pulsing options.");
+        }
+      }
       return locationComponentOptions;
     }
 
@@ -1156,6 +1373,13 @@ public class LocationComponentOptions implements Parcelable {
     private Float trackingAnimationDurationMultiplier;
     private Boolean compassAnimationEnabled;
     private Boolean accuracyAnimationEnabled;
+    private Boolean pulsingCircleEnabled;
+    private Boolean pulsingCircleFadeEnabled;
+    private int pulsingCircleColor;
+    private float pulsingCircleDuration;
+    private float pulsingCircleMaxRadius;
+    private float pulsingCircleAlpha;
+    private String pulsingCircleInterpolator;
 
     Builder() {
     }
@@ -1194,6 +1418,13 @@ public class LocationComponentOptions implements Parcelable {
       this.trackingAnimationDurationMultiplier = source.trackingAnimationDurationMultiplier();
       this.compassAnimationEnabled = source.compassAnimationEnabled();
       this.accuracyAnimationEnabled = source.accuracyAnimationEnabled();
+      this.pulsingCircleEnabled = source.pulsingCircleEnabled;
+      this.pulsingCircleFadeEnabled = source.pulsingCircleFadeEnabled;
+      this.pulsingCircleColor = source.pulseColor;
+      this.pulsingCircleDuration = source.pulseSingleDuration;
+      this.pulsingCircleMaxRadius = source.pulsingCircleMaxRadius;
+      this.pulsingCircleAlpha = source.pulseAlpha;
+      this.pulsingCircleInterpolator = source.pulseInterpolator;
     }
 
     /**
@@ -1671,8 +1902,79 @@ public class LocationComponentOptions implements Parcelable {
      *
      * @return whether smooth animation of the accuracy circle is enabled
      */
-    public Builder accuracyAnimationEnabled(Boolean accuracyAnimationEnabled) {
+    public LocationComponentOptions.Builder accuracyAnimationEnabled(Boolean accuracyAnimationEnabled) {
       this.accuracyAnimationEnabled = accuracyAnimationEnabled;
+      return this;
+    }
+
+    /**
+     * Enable or disable the LocationComponent's pulsing circle.
+     *
+     * @return whether the LocationComponent's pulsing circle is enabled
+     */
+    public LocationComponentOptions.Builder  pulsingCircleEnabled(Boolean pulsingCircleEnabled) {
+      this.pulsingCircleEnabled = pulsingCircleEnabled;
+      return this;
+    }
+
+    /**
+     * Enable or disable fading of the LocationComponent's pulsing circle. If it fades, the circle's
+     * opacity decreases as its radius increases.
+     *
+     * @return whether fading of the LocationComponent's pulsing circle is enabled
+     */
+    public LocationComponentOptions.Builder  pulsingCircleFadeEnabled(Boolean pulsingCircleFadeEnabled) {
+      this.pulsingCircleFadeEnabled = pulsingCircleFadeEnabled;
+      return this;
+    }
+
+    /**
+     * Sets the color of the LocationComponent's pulsing circle.
+     *
+     * @return the current set color of the circle
+     */
+    public LocationComponentOptions.Builder pulsingCircleColor(int pulsingCircleColor) {
+      this.pulsingCircleColor = pulsingCircleColor;
+      return this;
+    }
+
+    /**
+     * Sets the number of milliseconds it takes for a single pulse of the LocationComponent's pulsing circle.
+     *
+     * @return the current set length of time for a single pulse
+     */
+    public LocationComponentOptions.Builder pulsingCircleDuration(float pulsingCircleDuration) {
+      this.pulsingCircleDuration = pulsingCircleDuration;
+      return this;
+    }
+
+    /**
+     * The maximum radius that a single pulse should expand the LocationComponent's pulsing circle to.
+     *
+     * @return the maximum radius that the pulsing circle will expand to.
+     */
+    public LocationComponentOptions.Builder pulsingCircleMaxRadius(float pulsingCircleMaxRadius) {
+      this.pulsingCircleMaxRadius = pulsingCircleMaxRadius;
+      return this;
+    }
+
+    /**
+     * Sets the opacity of the LocationComponent's pulsing circle.
+     *
+     * @return the current set opacity of the LocationComponent's circle
+     */
+    public LocationComponentOptions.Builder pulsingCircleAlpha(float pulsingCircleAlpha) {
+      this.pulsingCircleAlpha = pulsingCircleAlpha;
+      return this;
+    }
+
+    /**
+     * Sets the pulsing circle's interpolator animation.
+     *
+     * @return the interpolator animation which the pulsing circle is using
+     */
+    public LocationComponentOptions.Builder pulsingCircleInterpolator(String pulsingCircleInterpolator) {
+      this.pulsingCircleInterpolator = pulsingCircleInterpolator;
       return this;
     }
 
@@ -1730,9 +2032,6 @@ public class LocationComponentOptions implements Parcelable {
       if (this.trackingMultiFingerMoveThreshold == null) {
         missing += " trackingMultiFingerMoveThreshold";
       }
-      if (this.trackingAnimationDurationMultiplier == null) {
-        missing += " trackingAnimationDurationMultiplier";
-      }
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
@@ -1769,7 +2068,14 @@ public class LocationComponentOptions implements Parcelable {
         this.layerBelow,
         this.trackingAnimationDurationMultiplier,
         this.compassAnimationEnabled,
-        this.accuracyAnimationEnabled);
+        this.accuracyAnimationEnabled,
+        this.pulsingCircleEnabled,
+        this.pulsingCircleFadeEnabled,
+        this.pulsingCircleColor,
+        this.pulsingCircleDuration,
+        this.pulsingCircleMaxRadius,
+        this.pulsingCircleAlpha,
+        this.pulsingCircleInterpolator);
     }
   }
 }

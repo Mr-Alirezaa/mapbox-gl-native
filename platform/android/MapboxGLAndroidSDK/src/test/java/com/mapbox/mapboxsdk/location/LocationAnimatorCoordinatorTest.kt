@@ -30,12 +30,15 @@ class LocationAnimatorCoordinatorTest {
 
   private val animatorProvider: MapboxAnimatorProvider = mockk()
   private val animatorSetProvider: MapboxAnimatorSetProvider = mockk()
+  private val locationComponentOptions: LocationComponentOptions = mockk()
 
   private val projection: Projection = mockk()
 
   @Before
   fun setUp() {
-    locationAnimatorCoordinator = LocationAnimatorCoordinator(projection, animatorSetProvider, animatorProvider)
+    locationAnimatorCoordinator = LocationAnimatorCoordinator(projection,
+      animatorSetProvider,
+      animatorProvider, locationComponentOptions)
     configureAnimatorProvider()
     every { projection.getMetersPerPixelAtLatitude(any()) } answers { 1.0 }
     every { animatorSetProvider.startAnimation(any(), any(), any()) } answers {}
@@ -48,7 +51,8 @@ class LocationAnimatorCoordinatorTest {
       ANIMATOR_CAMERA_COMPASS_BEARING,
       ANIMATOR_LAYER_ACCURACY,
       ANIMATOR_ZOOM,
-      ANIMATOR_TILT
+      ANIMATOR_TILT,
+      ANIMATOR_PULSING_CIRCLE
     ))
   }
 
@@ -347,6 +351,12 @@ class LocationAnimatorCoordinatorTest {
   }
 
   @Test
+  fun startPulsingCircle_animatorCreated() {
+    locationAnimatorCoordinator.startLocationComponentCirclePulsing(locationComponentOptions)
+    assertTrue(locationAnimatorCoordinator.animatorArray[ANIMATOR_PULSING_CIRCLE] != null)
+  }
+
+  @Test
   fun feedNewTiltLevel_animatorValue() {
     val tilt = 30.0f
     locationAnimatorCoordinator.feedNewTilt(
@@ -394,6 +404,14 @@ class LocationAnimatorCoordinatorTest {
     locationAnimatorCoordinator.cancelTiltAnimation()
 
     assertTrue(locationAnimatorCoordinator.animatorArray[ANIMATOR_TILT] == null)
+  }
+
+  @Test
+  fun cancelPulseAnimation() {
+    locationAnimatorCoordinator.startLocationComponentCirclePulsing(locationComponentOptions)
+    locationAnimatorCoordinator.cancelTiltAnimation()
+
+    assertTrue(locationAnimatorCoordinator.animatorArray[ANIMATOR_PULSING_CIRCLE] == null)
   }
 
   @Test

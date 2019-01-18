@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import com.mapbox.mapboxsdk.R;
 
@@ -77,5 +78,34 @@ public class LocationComponentOptionsTest {
       .layerAbove("above")
       .layerBelow("below")
       .build();
+  }
+
+  @Test
+  public void passingPulsingOptionsWhilePulsingDisabled_throwsException() throws Exception {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage(
+        "You've set up the following pulsing circle options but have not enabled"
+            + " the pulsing circle via the LocationComponentOptions builder:"
+            + " pulsingCircleColor" + " pulsingCircleAlpha"
+            + ". Enable the pulsing" + " circle if you're going to set pulsing options.");
+
+
+
+    LocationComponentOptions.builder(context)
+        .pulsingCircleEnabled(false)
+        .pulsingCircleColor(Color.RED)
+        .pulsingCircleAlpha(.4f)
+        .build();
+  }
+
+  @Test
+  public void passingPulsingWrongAlpha_throwsException() throws Exception {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("LocationComponent pulsing circle alpha value must be between 0.0 and 1.0.");
+
+    LocationComponentOptions.builder(context)
+        .pulsingCircleEnabled(true)
+        .pulsingCircleAlpha(.4f)
+        .build();
   }
 }
