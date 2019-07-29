@@ -137,7 +137,6 @@ target_include_directories(example-custom-layer
 )
 
 target_link_libraries(example-custom-layer
-    PRIVATE optional
     PRIVATE -llog
     PRIVATE -lGLESv2
 )
