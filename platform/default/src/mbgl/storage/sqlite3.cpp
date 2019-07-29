@@ -386,7 +386,7 @@ Query::get(int offset) {
 template <> mbgl::optional<int64_t> Query::get(int offset) {
     assert(stmt.impl);
     if (sqlite3_column_type(stmt.impl->stmt, offset) == SQLITE_NULL) {
-        return mbgl::optional<int64_t>();
+        return {};
     } else {
         return get<int64_t>(offset);
     }
@@ -395,7 +395,7 @@ template <> mbgl::optional<int64_t> Query::get(int offset) {
 template <> mbgl::optional<double> Query::get(int offset) {
     assert(stmt.impl);
     if (sqlite3_column_type(stmt.impl->stmt, offset) == SQLITE_NULL) {
-        return mbgl::optional<double>();
+        return {};
     } else {
         return get<double>(offset);
     }
