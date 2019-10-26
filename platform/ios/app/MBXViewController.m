@@ -283,7 +283,7 @@ CLLocationCoordinate2D randomWorldCoordinate() {
         UIWindow *helperWindow = [[UIWindow alloc] initWithFrame:helperScreen.bounds];
         helperWindow.screen = helperScreen;
         UIViewController *helperViewController = [[UIViewController alloc] init];
-        MGLMapView *helperMapView = [[MGLMapView alloc] initWithFrame:helperWindow.bounds styleURL:MGLStyle.satelliteStreetsStyleURL];
+        MGLMapView *helperMapView = [[MGLMapView alloc] initWithFrame:helperWindow.bounds styleURL:MGLStyle.mapirVectorStyleURL];
         helperMapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         helperMapView.camera = self.mapView.camera;
         helperMapView.compassView.hidden = YES;
@@ -1907,40 +1907,32 @@ CLLocationCoordinate2D randomWorldCoordinate() {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         styleNames = @[
-            @"Streets",
-            @"Outdoors",
-            @"Light",
-            @"Dark",
-            @"Satellite",
-            @"Satellite Streets",
+            @"Map.ir Vector",
+            @"Map.ir Raster"
         ];
         styleURLs = @[
-            [MGLStyle streetsStyleURL],
-            [MGLStyle outdoorsStyleURL],
-            [MGLStyle lightStyleURL],
-            [MGLStyle darkStyleURL],
-            [MGLStyle satelliteStyleURL],
-            [MGLStyle satelliteStreetsStyleURL]
+            [MGLStyle mapirVectorStyleURL],
+            [MGLStyle mapirRasterStyleURL]
         ];
         NSAssert(styleNames.count == styleURLs.count, @"Style names and URLs don’t match.");
 
-        // Make sure defaultStyleURLs is up-to-date.
-        unsigned numMethods = 0;
-        Method *methods = class_copyMethodList(object_getClass([MGLStyle class]), &numMethods);
-        unsigned numStyleURLMethods = 0;
-        for (NSUInteger i = 0; i < numMethods; i++) {
-            Method method = methods[i];
-            if (method_getNumberOfArguments(method) == 3 /* _cmd, self, version */) {
-                SEL selector = method_getName(method);
-                NSString *name = @(sel_getName(selector));
-                if ([name hasSuffix:@"StyleURLWithVersion:"]) {
-                    numStyleURLMethods += 1;
-                }
-            }
-        }
-        NSAssert(numStyleURLMethods == styleNames.count,
-                 @"MGLStyle provides %u default styles but iosapp only knows about %lu of them.",
-                 numStyleURLMethods, (unsigned long)styleNames.count);
+//        // Make sure defaultStyleURLs is up-to-date.
+//        unsigned numMethods = 0;
+//        Method *methods = class_copyMethodList(object_getClass([MGLStyle class]), &numMethods);
+//        unsigned numStyleURLMethods = 0;
+//        for (NSUInteger i = 0; i < numMethods; i++) {
+//            Method method = methods[i];
+//            if (method_getNumberOfArguments(method) == 3 /* _cmd, self, version */) {
+//                SEL selector = method_getName(method);
+//                NSString *name = @(sel_getName(selector));
+//                if ([name hasSuffix:@"StyleURLWithVersion:"]) {
+//                    numStyleURLMethods += 1;
+//                }
+//            }
+//        }
+//        NSAssert(numStyleURLMethods == styleNames.count,
+//                 @"MGLStyle provides %u default styles but iosapp only knows about %lu of them.",
+//                 numStyleURLMethods, (unsigned long)styleNames.count);
     });
 
     self.styleIndex = (self.styleIndex + 1) % styleNames.count;

@@ -505,6 +505,7 @@
 		ACD0245B2187EABA00D8C8A7 /* MMEMetricsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD024542187EAAF00D8C8A7 /* MMEMetricsManager.m */; };
 		ACD0245E2187EACB00D8C8A7 /* MMEMetrics.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD024572187EAAF00D8C8A7 /* MMEMetrics.m */; };
 		ACD0245F2187EACB00D8C8A7 /* MMEMetrics.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD024572187EAAF00D8C8A7 /* MMEMetrics.m */; };
+		C0ED1E782364C92E00F1959C /* Shiveh.json in Resources */ = {isa = PBXBuildFile; fileRef = C0ED1E772364C92100F1959C /* Shiveh.json */; };
 		CA0B3C022329DE9A00E4B493 /* MGLTestAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAA65D82321BBA900F08A39 /* MGLTestAssertionHandler.m */; };
 		CA0C27922076C804001CE5B7 /* MGLShapeSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0C27912076C804001CE5B7 /* MGLShapeSourceTests.m */; };
 		CA0C27942076CA19001CE5B7 /* MGLMapViewIntegrationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0C27932076CA19001CE5B7 /* MGLMapViewIntegrationTest.m */; };
@@ -1203,6 +1204,7 @@
 		ACD024552187EAAF00D8C8A7 /* MMEMetrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMEMetrics.h; sourceTree = "<group>"; };
 		ACD024562187EAAF00D8C8A7 /* MMEMetricsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMEMetricsManager.h; sourceTree = "<group>"; };
 		ACD024572187EAAF00D8C8A7 /* MMEMetrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMEMetrics.m; sourceTree = "<group>"; };
+		C0ED1E772364C92100F1959C /* Shiveh.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Shiveh.json; sourceTree = "<group>"; };
 		CA0C27912076C804001CE5B7 /* MGLShapeSourceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGLShapeSourceTests.m; sourceTree = "<group>"; };
 		CA0C27932076CA19001CE5B7 /* MGLMapViewIntegrationTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGLMapViewIntegrationTest.m; sourceTree = "<group>"; wrapsLines = 0; };
 		CA0C27952076CA50001CE5B7 /* MGLMapViewIntegrationTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGLMapViewIntegrationTest.h; sourceTree = "<group>"; };
@@ -2215,6 +2217,7 @@
 			isa = PBXGroup;
 			children = (
 				960D0C351ECF5AAF008E151F /* Images.xcassets */,
+				C0ED1E772364C92100F1959C /* Shiveh.json */,
 				DA89339F1CCC951200E68420 /* Localizable.strings */,
 				DAC49C5F1CD02BC9009E1AA3 /* Localizable.stringsdict */,
 				DA8933EF1CCD387900E68420 /* strip-frameworks.sh */,
@@ -3149,6 +3152,7 @@
 				960D0C361ECF5AAF008E151F /* Images.xcassets in Resources */,
 				DA8933F01CCD387900E68420 /* strip-frameworks.sh in Resources */,
 				DAC49C5C1CD02BC9009E1AA3 /* Localizable.stringsdict in Resources */,
+				C0ED1E782364C92E00F1959C /* Shiveh.json in Resources */,
 				DA8933BF1CCD2CAD00E68420 /* Foundation.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

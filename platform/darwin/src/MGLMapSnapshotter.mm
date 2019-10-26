@@ -605,9 +605,9 @@ const CGFloat MGLSnapshotterMinimumPixelSize = 64;
             break;
         case MGLAttributionInfoStyleMedium:
 #if TARGET_OS_IPHONE
-            logoImage = [UIImage imageNamed:@"mapbox_helmet" inBundle:[NSBundle mgl_frameworkBundle] compatibleWithTraitCollection:nil];
+            logoImage = [UIImage imageNamed:@"mapir_helmet" inBundle:[NSBundle mgl_frameworkBundle] compatibleWithTraitCollection:nil];
 #else
-            logoImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mgl_frameworkBundle] pathForResource:@"mapbox_helmet" ofType:@"pdf"]];
+            logoImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mgl_frameworkBundle] pathForResource:@"mapir_helmet" ofType:@"pdf"]];
 #endif
             break;
         case MGLAttributionInfoStyleShort:
@@ -621,9 +621,9 @@ const CGFloat MGLSnapshotterMinimumPixelSize = 64;
 {
     MGLImage *logoImage;
 #if TARGET_OS_IPHONE
-    logoImage =[UIImage imageNamed:@"mapbox" inBundle:[NSBundle mgl_frameworkBundle] compatibleWithTraitCollection:nil];
+    logoImage =[UIImage imageNamed:@"mapir" inBundle:[NSBundle mgl_frameworkBundle] compatibleWithTraitCollection:nil];
 #else
-    logoImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mgl_frameworkBundle] pathForResource:@"mapbox" ofType:@"pdf"]];
+    logoImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mgl_frameworkBundle] pathForResource:@"mapir" ofType:@"pdf"]];
 #endif
     return logoImage;
 }

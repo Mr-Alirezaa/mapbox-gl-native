@@ -534,7 +534,7 @@ public:
 
     // setup logo
     //
-    UIImage *logo = [UIImage mgl_resourceImageNamed:@"mapbox"];
+    UIImage *logo = [UIImage mgl_resourceImageNamed:@"mapir"];
     _logoView = [[UIImageView alloc] initWithImage:logo];
     _logoView.accessibilityTraits = UIAccessibilityTraitStaticText;
     _logoView.accessibilityLabel = NSLocalizedStringWithDefaultValue(@"LOGO_A11Y_LABEL", nil, nil, @"Mapbox", @"Accessibility label");
@@ -546,17 +546,28 @@ public:
 
     // setup attribution
     //
-    _attributionButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    _attributionButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    NSMutableDictionary *attributesDictionary = [NSMutableDictionary dictionary];
+
+    [attributesDictionary setObject:[UIFont systemFontOfSize:12] forKey:NSFontAttributeName];
+    [attributesDictionary setObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
+
+    NSAttributedString *attributedString = [[NSAttributedString alloc]initWithString:@"© Map © OpenStreetMap" attributes:attributesDictionary];
+
+    [_attributionButton setAttributedTitle:attributedString forState:UIControlStateNormal];
+    [_attributionButton setContentEdgeInsets:UIEdgeInsetsMake(3.0, 6.0, 3.0, 6.0)];
+    [_attributionButton sizeToFit];
+    [_attributionButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [[_attributionButton layer] setCornerRadius:6.0];
+    [_attributionButton setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0.7]];
     _attributionButton.accessibilityLabel = NSLocalizedStringWithDefaultValue(@"INFO_A11Y_LABEL", nil, nil, @"About this map", @"Accessibility label");
     _attributionButton.accessibilityHint = NSLocalizedStringWithDefaultValue(@"INFO_A11Y_HINT", nil, nil, @"Shows credits, a feedback form, and more", @"Accessibility hint");
-    [_attributionButton addTarget:self action:@selector(showAttribution:) forControlEvents:UIControlEventTouchUpInside];
+//    [_attributionButton addTarget:self action:@selector(showAttribution:) forControlEvents:UIControlEventTouchUpInside];
     _attributionButton.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:_attributionButton];
     _attributionButtonConstraints = [NSMutableArray array];
     [_attributionButton addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:NULL];
 
-    UILongPressGestureRecognizer *attributionLongPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(showAttribution:)];
-    [_attributionButton addGestureRecognizer:attributionLongPress];
     _attributionButtonPosition = MGLOrnamentPositionBottomRight;
     _attributionButtonMargins = MGLOrnamentDefaultPositionOffset;
 
