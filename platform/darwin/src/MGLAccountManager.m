@@ -28,7 +28,7 @@ NSString * const MGLMapboxAccountTypeKey = @"MGLMapboxAccountType";
 
 + (void)load {
     // Read the initial configuration from Info.plist.
-    NSString *accessToken = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"MGLMapboxAccessToken"];
+    NSString *accessToken = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"MAPIRAccessToken"];
     if (accessToken.length) {
         self.accessToken = accessToken;
     }

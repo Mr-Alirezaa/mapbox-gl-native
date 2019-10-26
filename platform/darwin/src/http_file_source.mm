@@ -257,6 +257,12 @@ std::unique_ptr<AsyncRequest> HTTPFileSource::request(const Resource& resource, 
         if (isTile) {
             [[MGLNetworkConfiguration sharedManager] startDownloadEvent:url.relativePath type:@"tile"];
         }
+
+        // Add Map.ir Access token to header of requests if available.
+        if (MGLAccountManager.accessToken)
+        {
+            [req addValue:MGLAccountManager.accessToken forHTTPHeaderField:@"x-api-key"];
+        }
         
         request->task = [impl->session
             dataTaskWithRequest:req

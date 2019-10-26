@@ -30,7 +30,7 @@ MGL_EXPORT
  @note You must set the access token before attempting to load any Mapbox-hosted
     style. Therefore, you should generally set it before creating an instance of
     `MGLMapView`. The recommended way to set an access token is to add an entry
-    to your application’s Info.plist file with the key `MGLMapboxAccessToken`
+    to your application’s Info.plist file with the key `MAPIRAccessToken`
     and the type `String`. Alternatively, you may call this method from your
     application delegate’s `-applicationDidFinishLaunching:` method.
  */
