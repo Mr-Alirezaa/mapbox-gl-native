@@ -61,6 +61,28 @@ FOUNDATION_EXTERN MGL_EXPORT MGLExceptionName const MGLRedundantSourceIdentifier
 MGL_EXPORT
 @interface MGLStyle : NSObject
 
+#pragma mark Accessing Map.ir Default Styles
+
+/**
+ Returns the URL to the current version of the Map.ir vector style as of
+ publication.
+
+ `MGLMapView` and `MGLTilePyramidOfflineRegion` use Map.ir Vector when no style
+ is specified explicitly.
+
+ */
+@property (class, nonatomic, readonly) NSURL *mapirVectorStyleURL;
+
+/**
+ Returns the URL to the current version of the Map.ir raster style as of
+ publication.
+
+ `MGLMapView` and `MGLTilePyramidOfflineRegion` use Map.ir Vector when no style
+ is specified explicitly.
+
+ */
+@property (class, nonatomic, readonly) NSURL *mapirRasterStyleURL;
+
 #pragma mark Accessing Default Styles
 
 /**
@@ -79,7 +101,7 @@ MGL_EXPORT
     `+streetsStyleURLWithVersion:` method instead. Such details may change
     significantly from version to version.
  */
-@property (class, nonatomic, readonly) NSURL *streetsStyleURL;
+//@property (class, nonatomic, readonly) NSURL *streetsStyleURL;
 
 /**
  Returns the URL to the given version of the
@@ -92,7 +114,7 @@ MGL_EXPORT
 
  @param version A specific version of the style.
  */
-+ (NSURL *)streetsStyleURLWithVersion:(NSInteger)version;
+//+ (NSURL *)streetsStyleURLWithVersion:(NSInteger)version;
 
 /**
  Returns the URL to the current version of the
@@ -107,7 +129,7 @@ MGL_EXPORT
     `+outdoorsStyleURLWithVersion:` method instead. Such details may change
     significantly from version to version.
  */
-@property (class, nonatomic, readonly) NSURL *outdoorsStyleURL;
+//@property (class, nonatomic, readonly) NSURL *outdoorsStyleURL;
 
 /**
  Returns the URL to the given version of the
@@ -117,7 +139,7 @@ MGL_EXPORT
 
  @param version A specific version of the style.
  */
-+ (NSURL *)outdoorsStyleURLWithVersion:(NSInteger)version;
+//+ (NSURL *)outdoorsStyleURLWithVersion:(NSInteger)version;
 
 /**
  Returns the URL to the current version of the
@@ -131,7 +153,7 @@ MGL_EXPORT
     `+lightStyleURLWithVersion:` method instead. Such details may change
     significantly from version to version.
  */
-@property (class, nonatomic, readonly) NSURL *lightStyleURL;
+//@property (class, nonatomic, readonly) NSURL *lightStyleURL;
 
 /**
  Returns the URL to the given version of the
@@ -142,7 +164,7 @@ MGL_EXPORT
 
  @param version A specific version of the style.
  */
-+ (NSURL *)lightStyleURLWithVersion:(NSInteger)version;
+//+ (NSURL *)lightStyleURLWithVersion:(NSInteger)version;
 
 /**
  Returns the URL to the current version of the
@@ -156,7 +178,7 @@ MGL_EXPORT
     `+darkStyleURLWithVersion:` method instead. Such details may change
     significantly from version to version.
  */
-@property (class, nonatomic, readonly) NSURL *darkStyleURL;
+//@property (class, nonatomic, readonly) NSURL *darkStyleURL;
 
 /**
  Returns the URL to the given version of the
@@ -167,7 +189,7 @@ MGL_EXPORT
 
  @param version A specific version of the style.
  */
-+ (NSURL *)darkStyleURLWithVersion:(NSInteger)version;
+//+ (NSURL *)darkStyleURLWithVersion:(NSInteger)version;
 
 /**
  Returns the URL to the current version of the
@@ -186,7 +208,7 @@ MGL_EXPORT
  Satellite styles</a> example to learn how to initialize a map with the Mapbox
  Satellite style.
  */
-@property (class, nonatomic, readonly) NSURL *satelliteStyleURL;
+//@property (class, nonatomic, readonly) NSURL *satelliteStyleURL;
 
 /**
  Returns the URL to the given version of the
@@ -197,7 +219,7 @@ MGL_EXPORT
 
  @param version A specific version of the style.
  */
-+ (NSURL *)satelliteStyleURLWithVersion:(NSInteger)version;
+//+ (NSURL *)satelliteStyleURLWithVersion:(NSInteger)version;
 
 /**
  Returns the URL to the current version of the
@@ -219,7 +241,7 @@ MGL_EXPORT
  Satellite styles</a> example to learn how to initialize a map with the Mapbox
  Satellite Streets style.
  */
-@property (class, nonatomic, readonly) NSURL *satelliteStreetsStyleURL;
+//@property (class, nonatomic, readonly) NSURL *satelliteStreetsStyleURL;
 
 /**
  Returns the URL to the given version of the
@@ -232,7 +254,7 @@ MGL_EXPORT
 
  @param version A specific version of the style.
  */
-+ (NSURL *)satelliteStreetsStyleURLWithVersion:(NSInteger)version;
+//+ (NSURL *)satelliteStreetsStyleURLWithVersion:(NSInteger)version;
 
 #pragma mark Accessing Metadata About the Style
 

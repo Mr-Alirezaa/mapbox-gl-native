@@ -56,7 +56,7 @@
     MGLLogDebug(@"Initializing styleURL: %@ shape: %@ fromZoomLevel: %f toZoomLevel: %f", styleURL, shape, minimumZoomLevel, maximumZoomLevel);
     if (self = [super init]) {
         if (!styleURL) {
-            styleURL = [MGLStyle streetsStyleURLWithVersion:MGLStyleDefaultVersion];
+            styleURL = [MGLStyle mapirVectorStyleURL];
         }
 
         if (!styleURL.scheme) {

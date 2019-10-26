@@ -102,7 +102,7 @@ const CGFloat MGLSnapshotterMinimumPixelSize = 64;
     {
         if ( !styleURL)
         {
-            styleURL = [MGLStyle streetsStyleURLWithVersion:MGLStyleDefaultVersion];
+            styleURL = [MGLStyle mapirVectorStyleURL];
         }
         _styleURL = styleURL;
         _size = size;

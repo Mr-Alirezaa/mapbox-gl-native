@@ -52,7 +52,7 @@
     MGLLogDebug(@"Initializing styleURL: %@ bounds: %@ fromZoomLevel: %f toZoomLevel: %f", styleURL, MGLStringFromCoordinateBounds(bounds), minimumZoomLevel, maximumZoomLevel);
     if (self = [super init]) {
         if (!styleURL) {
-            styleURL = [MGLStyle streetsStyleURLWithVersion:MGLStyleDefaultVersion];
+            styleURL = [MGLStyle mapirVectorStyleURL];
         }
 
         if (!styleURL.scheme) {

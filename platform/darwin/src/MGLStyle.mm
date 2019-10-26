@@ -87,6 +87,29 @@ const MGLExceptionName MGLRedundantSourceIdentifierException = @"MGLRedundantSou
 
 @implementation MGLStyle
 
+#pragma mark Map.ir Default Style URLs
+
+static NSURL *MGLStyleURL_mapirVector;
++ (NSURL *)mapirVectorStyleURL {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        MGLStyleURL_mapirVector = [NSURL URLWithString:@"https://map.ir/vector/styles/main/main_mobile_style.json"];
+    });
+    return MGLStyleURL_mapirVector;
+}
+
+static NSURL *MGLStyleURL_mapirRaster;
++ (NSURL *)mapirRasterStyleURL {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        MGLStyleURL_mapirRaster = [NSURL fileURLWithPath:[[NSBundle bundleForClass:[MGLMapView self]]
+                                                          pathForResource:@"Shiveh" ofType:@"json"]];
+    });
+    return MGLStyleURL_mapirRaster;
+}
+
+/*
+
 #pragma mark Default style URLs
 
 /// @param name The style’s marketing name, written in lower camelCase.
@@ -111,6 +134,8 @@ MGL_DEFINE_STYLE(light, light)
 MGL_DEFINE_STYLE(dark, dark)
 MGL_DEFINE_STYLE(satellite, satellite)
 MGL_DEFINE_STYLE(satelliteStreets, satellite-streets)
+
+ */
 
 // Make sure all the styles listed in mbgl::util::default_styles::orderedStyles
 // are defined above and also declared in MGLStyle.h.
