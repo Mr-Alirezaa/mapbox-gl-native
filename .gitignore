@@ -3,6 +3,7 @@
 *.pyc
 *.gcno
 *.gcda
+*.o
 *~
 offline.db
 new_offline.db
