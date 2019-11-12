@@ -1,0 +1,7 @@
+Executable : /usr/bin/ninja
+arguments : 
+-C
+/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/debug/armeabi-v7a
+example-custom-layer
+jvmArgs : 
+

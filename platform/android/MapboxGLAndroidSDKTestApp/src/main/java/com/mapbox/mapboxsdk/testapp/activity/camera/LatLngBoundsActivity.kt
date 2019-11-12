@@ -67,7 +67,7 @@ class LatLngBoundsActivity : AppCompatActivity() {
 
   private fun loadStyle(featureCollection: FeatureCollection) {
     mapboxMap.setStyle(Style.Builder()
-      .fromUri(Style.MAPBOX_STREETS)
+      .fromUri(Style.MAPIR_DEFAULT_STYLE)
       .withLayer(SymbolLayer("symbol", "symbol")
         .withProperties(
           iconAllowOverlap(true),

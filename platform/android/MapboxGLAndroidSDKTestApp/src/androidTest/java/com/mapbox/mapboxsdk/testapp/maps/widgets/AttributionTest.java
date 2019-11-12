@@ -74,7 +74,7 @@ public class AttributionTest extends EspressoTest {
 
     // click on View to open dialog
     onView(withId(R.id.attributionView)).perform(click());
-    onView(withText(R.string.mapbox_attributionsDialogTitle)).check(matches(isDisplayed()));
+    onView(withText(R.string.mapir_attributionsDialogTitle)).check(matches(isDisplayed()));
 
     // test for trigger url intent
     Matcher<Intent> expectedIntent = allOf(hasAction(Intent.ACTION_VIEW), hasData(Uri.parse(urlSpans[0].getURL())));
@@ -95,7 +95,7 @@ public class AttributionTest extends EspressoTest {
 
     // click on View to open dialog
     onView(withId(R.id.attributionView)).perform(click());
-    onView(withText(R.string.mapbox_attributionsDialogTitle)).check(matches(isDisplayed()));
+    onView(withText(R.string.mapir_attributionsDialogTitle)).check(matches(isDisplayed()));
 
     // test for trigger url intent
     Matcher<Intent> expectedIntent = allOf(hasAction(Intent.ACTION_VIEW), hasData(Uri.parse(urlSpans[1].getURL())));
@@ -116,7 +116,7 @@ public class AttributionTest extends EspressoTest {
 
     // click on View to open dialog
     onView(withId(R.id.attributionView)).perform(click());
-    onView(withText(R.string.mapbox_attributionsDialogTitle)).check(matches(isDisplayed()));
+    onView(withText(R.string.mapir_attributionsDialogTitle)).check(matches(isDisplayed()));
 
     // test for trigger url intent
     Matcher<Intent> expectedIntent = hasAction(Intent.ACTION_VIEW);
@@ -138,11 +138,11 @@ public class AttributionTest extends EspressoTest {
 
     // click on View to open dialog
     onView(withId(R.id.attributionView)).perform(click());
-    onView(withText(R.string.mapbox_attributionsDialogTitle)).inRoot(isDialog()).check(matches(isDisplayed()));
+    onView(withText(R.string.mapir_attributionsDialogTitle)).inRoot(isDialog()).check(matches(isDisplayed()));
 
     // click on item to open second dialog
-    onView(withText(R.string.mapbox_telemetrySettings)).inRoot(isDialog()).perform(click());
-    onView(withText(R.string.mapbox_attributionTelemetryTitle)).inRoot(isDialog()).check(matches(isDisplayed()));
+    onView(withText(R.string.mapir_telemetrySettings)).inRoot(isDialog()).perform(click());
+    onView(withText(R.string.mapir_attributionTelemetryTitle)).inRoot(isDialog()).check(matches(isDisplayed()));
   }
 
   @After

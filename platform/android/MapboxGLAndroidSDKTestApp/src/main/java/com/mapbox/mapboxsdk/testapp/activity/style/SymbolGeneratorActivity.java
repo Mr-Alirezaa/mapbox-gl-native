@@ -93,7 +93,7 @@ public class SymbolGeneratorActivity extends AppCompatActivity implements OnMapR
   @Override
   public void onMapReady(@NonNull final MapboxMap map) {
     mapboxMap = map;
-    map.setStyle(Style.OUTDOORS, style -> {
+    map.setStyle(Style.MAPIR_DEFAULT_STYLE, style -> {
       addSymbolClickListener();
       new LoadDataTask(SymbolGeneratorActivity.this).execute();
     });

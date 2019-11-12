@@ -274,7 +274,7 @@ class LocationLayerControllerTest : EspressoTest() {
         component.isLocationComponentEnabled = true
         component.renderMode = RenderMode.NORMAL
         component.forceLocationUpdate(location)
-        styleChangeIdlingResource.waitForStyle(mapboxMap, Style.LIGHT)
+        styleChangeIdlingResource.waitForStyle(mapboxMap, Style.MAPIR_DEFAULT_STYLE)
         TestingAsyncUtils.waitForLayer(uiController, mapView)
 
         assertThat(component.renderMode, `is`(equalTo(RenderMode.NORMAL)))
@@ -321,7 +321,7 @@ class LocationLayerControllerTest : EspressoTest() {
           `is`(true)
         )
 
-        mapboxMap.setStyle(Style.Builder().fromUrl(Style.LIGHT))
+        mapboxMap.setStyle(Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE))
         TestingAsyncUtils.waitForLayer(uiController, mapView)
 
         assertThat(

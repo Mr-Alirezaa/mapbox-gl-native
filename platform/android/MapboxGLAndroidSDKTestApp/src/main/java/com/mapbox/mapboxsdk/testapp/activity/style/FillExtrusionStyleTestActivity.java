@@ -24,7 +24,7 @@ public class FillExtrusionStyleTestActivity extends AppCompatActivity {
     mapView = (MapView) findViewById(R.id.mapView);
     mapView.onCreate(savedInstanceState);
     mapView.getMapAsync(mapboxMap ->
-      mapboxMap.setStyle(new Style.Builder().fromUri(Style.MAPBOX_STREETS),
+      mapboxMap.setStyle(new Style.Builder().fromUri(Style.MAPIR_DEFAULT_STYLE),
         style -> FillExtrusionStyleTestActivity.this.mapboxMap = mapboxMap
       )
     );

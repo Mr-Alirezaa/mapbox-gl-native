@@ -94,7 +94,7 @@ public class RuntimeStyleActivity extends AppCompatActivity {
 
       mapboxMap.setStyle(
         new Style.Builder()
-          .fromUri(Style.MAPBOX_STREETS)
+          .fromUri(Style.MAPIR_DEFAULT_STYLE)
           // set custom transition
           .withTransition(new TransitionOptions(250, 50)), style -> styleLoaded = true
       );

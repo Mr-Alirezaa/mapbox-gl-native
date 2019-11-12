@@ -5,7 +5,7 @@
         android:id="@+id/compassView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/mapbox_compassContentDescription"/>
+        android:contentDescription="@string/mapir_compassContentDescription"/>
 
     <ImageView
         android:visibility="gone"
@@ -22,6 +22,6 @@
         android:adjustViewBounds="true"
         android:clickable="true"
         android:focusable="true"
-        android:contentDescription="@string/mapbox_attributionsIconContentDescription"/>
+        android:contentDescription="@string/mapir_attributionsIconContentDescription"/>
 
 </merge>

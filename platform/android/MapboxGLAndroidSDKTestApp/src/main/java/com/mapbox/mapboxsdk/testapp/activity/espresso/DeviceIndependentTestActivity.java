@@ -28,7 +28,7 @@ public class DeviceIndependentTestActivity extends AppCompatActivity implements 
   @Override
   public void onMapReady(@NonNull MapboxMap map) {
     mapboxMap = map;
-    mapboxMap.setStyle(Style.MAPBOX_STREETS);
+    mapboxMap.setStyle(Style.MAPIR_DEFAULT_STYLE);
   }
 
   public MapboxMap getMapboxMap() {

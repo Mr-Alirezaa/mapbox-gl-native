@@ -75,7 +75,7 @@ public class DoubleMapActivity extends AppCompatActivity {
       // MapView large
       mapView = new MapView(view.getContext(), MapFragmentUtils.resolveArgs(view.getContext(), getArguments()));
       mapView.onCreate(savedInstanceState);
-      mapView.getMapAsync(mapboxMap -> mapboxMap.setStyle(Style.MAPBOX_STREETS));
+      mapView.getMapAsync(mapboxMap -> mapboxMap.setStyle(Style.MAPIR_DEFAULT_STYLE));
       ((ViewGroup) view.findViewById(R.id.container)).addView(mapView, 0);
 
       // MapView mini
@@ -88,7 +88,7 @@ public class DoubleMapActivity extends AppCompatActivity {
             .build()
           )
         );
-        mapboxMap.setStyle(new Style.Builder().fromUri(Style.LIGHT));
+        mapboxMap.setStyle(new Style.Builder().fromUri(Style.MAPIR_DEFAULT_STYLE));
 
         UiSettings uiSettings = mapboxMap.getUiSettings();
         uiSettings.setAllGesturesEnabled(false);

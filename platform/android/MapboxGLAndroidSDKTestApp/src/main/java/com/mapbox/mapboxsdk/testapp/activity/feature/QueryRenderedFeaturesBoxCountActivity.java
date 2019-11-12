@@ -40,7 +40,7 @@ public class QueryRenderedFeaturesBoxCountActivity extends AppCompatActivity {
     mapView.getMapAsync(mapboxMap -> {
       QueryRenderedFeaturesBoxCountActivity.this.mapboxMap = mapboxMap;
 
-      mapboxMap.setStyle(new Style.Builder().fromUri(Style.MAPBOX_STREETS));
+      mapboxMap.setStyle(new Style.Builder().fromUri(Style.MAPIR_DEFAULT_STYLE));
 
       selectionBox.setOnClickListener(view -> {
         // Query

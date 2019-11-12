@@ -96,7 +96,7 @@ public class MapSnapshotter {
     private float pixelRatio = 1;
     private int width;
     private int height;
-    private String styleUri = Style.MAPBOX_STREETS;
+    private String styleUri = Style.MAPIR_DEFAULT_STYLE;
     private String styleJson;
     private LatLngBounds region;
     private CameraPosition cameraPosition;

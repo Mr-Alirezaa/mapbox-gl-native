@@ -80,17 +80,17 @@ public class MapSnapshotterReuseActivity extends AppCompatActivity implements Ma
   public String getRandomStyle() {
     switch (random.nextInt(5)) {
       case 0:
-        return Style.DARK;
+        return Style.MAPIR_DEFAULT_STYLE;
       case 1:
-        return Style.LIGHT;
+        return Style.MAPIR_DEFAULT_STYLE;
       case 2:
-        return Style.MAPBOX_STREETS;
+        return Style.MAPIR_DEFAULT_STYLE;
       case 3:
-        return Style.OUTDOORS;
+        return Style.MAPIR_DEFAULT_STYLE;
       case 4:
-        return Style.SATELLITE_STREETS;
+        return Style.MAPIR_DEFAULT_STYLE;
       default:
-        return Style.TRAFFIC_DAY;
+        return Style.MAPIR_DEFAULT_STYLE;
     }
   }
 

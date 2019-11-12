@@ -1,0 +1,170 @@
+{
+  "buildFiles": [
+    "/home/phd/Android/Projects/mapir-gl-native/src/core-files.json",
+    "/home/phd/Android/Projects/mapir-gl-native/platform/android/core-files.json",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/benchmark.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/mapbox-base/mapbox/io/CMakeLists.txt",
+    "/home/phd/Android/Projects/mapir-gl-native/scripts/launch-c.in",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/core.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/mapbox-base/mapbox/CMakeLists.txt",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/boost.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/googletest.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/polylabel.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/CMakeLists.txt",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/mbgl.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/icu.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/vendor.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/mapbox-base/CMakeLists.txt",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/shelf-pack-cpp.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/mason-dependencies.cmake",
+    "/home/phd/Android/SDK/android-ndk-r16b/build/cmake/android.toolchain.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/protozero.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/mapbox-base/extras/CMakeLists.txt",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/doxygen.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/benchmark.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/earcut.hpp.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/benchmark/benchmark-files.json",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/mapbox-base/test/CMakeLists.txt",
+    "/home/phd/Android/Projects/mapir-gl-native/platform/android/filesource-files.json",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/vector-tile.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/xcode.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/cheap-ruler-cpp.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/platform/android/config.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/expected.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/unique_resource.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/test.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/mapbox-base/extras/rapidjson.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/scripts/launch-cxx.in",
+    "/home/phd/Android/Projects/mapir-gl-native/platform/default/filesource-files.json",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/wagyu.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/test/test-files.json",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/expression-test.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/render-test.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/filesource.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/sqlite.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/mason.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/nunicode.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/geojson-vt-cpp.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/eternal.cmake"
+  ],
+  "cleanCommands": [
+    "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" clean"
+  ],
+  "buildTargetsCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "include-test-bundle-Release-x86_64": {
+      "artifactName": "include-test-bundle",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" include-test-bundle",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/.build-mapbox-gl-native-mapbox-base/test/include-test-bundle"
+    },
+    "typewrapper-test-Release-x86_64": {
+      "artifactName": "typewrapper-test",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" typewrapper-test",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/.build-mapbox-gl-native-mapbox-base/test/typewrapper-test"
+    },
+    "mapbox-base-io-Release-x86_64": {
+      "artifactName": "mapbox-base-io",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" mapbox-base-io",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/.build-mapbox-gl-native-mapbox-base/mapbox/io/libmapbox-base-io.a"
+    },
+    "mbgl-filesource-Release-x86_64": {
+      "artifactName": "mbgl-filesource",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" mbgl-filesource",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/libmbgl-filesource.a"
+    },
+    "weak-test-Release-x86_64": {
+      "artifactName": "weak-test",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" weak-test",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/.build-mapbox-gl-native-mapbox-base/test/weak-test"
+    },
+    "mbgl-expression-test-Release-x86_64": {
+      "artifactName": "mbgl-expression-test",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" mbgl-expression-test",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/mbgl-expression-test"
+    },
+    "mbgl-benchmark-Release-x86_64": {
+      "artifactName": "mbgl-benchmark",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" mbgl-benchmark",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/mbgl-benchmark"
+    },
+    "mbgl-vendor-benchmark-Release-x86_64": {
+      "artifactName": "mbgl-vendor-benchmark",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" mbgl-vendor-benchmark",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/libmbgl-vendor-benchmark.a"
+    },
+    "mbgl-vendor-icu-Release-x86_64": {
+      "artifactName": "mbgl-vendor-icu",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" mbgl-vendor-icu",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/libmbgl-vendor-icu.a"
+    },
+    "mbgl-render-test-Release-x86_64": {
+      "artifactName": "mbgl-render-test",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" mbgl-render-test",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/mbgl-render-test"
+    },
+    "mapbox-gl-Release-x86_64": {
+      "artifactName": "mapbox-gl",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" mapbox-gl",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/build/intermediates/cmake/release/obj/x86_64/libmapbox-gl.so"
+    },
+    "io-test-Release-x86_64": {
+      "artifactName": "io-test",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" io-test",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/.build-mapbox-gl-native-mapbox-base/test/io-test"
+    },
+    "mbgl-core-Release-x86_64": {
+      "artifactName": "mbgl-core",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" mbgl-core",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/libmbgl-core.a"
+    },
+    "mbgl-vendor-googletest-Release-x86_64": {
+      "artifactName": "mbgl-vendor-googletest",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" mbgl-vendor-googletest",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/libmbgl-vendor-googletest.a"
+    },
+    "mbgl-vendor-nunicode-Release-x86_64": {
+      "artifactName": "mbgl-vendor-nunicode",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" mbgl-vendor-nunicode",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/libmbgl-vendor-nunicode.a"
+    },
+    "mbgl-test-Release-x86_64": {
+      "artifactName": "mbgl-test",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" mbgl-test",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/mbgl-test"
+    },
+    "example-custom-layer-Release-x86_64": {
+      "artifactName": "example-custom-layer",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" example-custom-layer",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/build/intermediates/cmake/release/obj/x86_64/libexample-custom-layer.so"
+    },
+    "include-test-targets-Release-x86_64": {
+      "artifactName": "include-test-targets",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" include-test-targets",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/.build-mapbox-gl-native-mapbox-base/test/include-test-targets"
+    },
+    "sqlite-Release-x86_64": {
+      "artifactName": "sqlite",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64\" sqlite",
+      "abi": "x86_64",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/release/x86_64/libsqlite.a"
+    }
+  }
+}

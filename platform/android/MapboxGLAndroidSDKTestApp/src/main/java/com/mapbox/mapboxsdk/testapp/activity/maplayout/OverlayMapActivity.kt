@@ -21,7 +21,7 @@ class OverlayMapActivity : AppCompatActivity() {
         mapView.onCreate(savedInstanceState)
         parentView.addView(OverlayView(this))
         mapView.getMapAsync {
-            it.setStyle(Style.MAPBOX_STREETS)
+            it.setStyle(Style.MAPIR_DEFAULT_STYLE)
         }
     }
 

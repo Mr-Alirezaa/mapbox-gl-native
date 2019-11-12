@@ -55,7 +55,7 @@ public class LatLngBoundsForCameraActivity extends AppCompatActivity implements 
   @Override
   public void onMapReady(@NonNull MapboxMap mapboxMap) {
     this.mapboxMap = mapboxMap;
-    mapboxMap.setStyle(Style.SATELLITE_STREETS);
+    mapboxMap.setStyle(Style.MAPIR_DEFAULT_STYLE);
     mapboxMap.setMinZoomPreference(2);
     mapboxMap.getUiSettings().setFlingVelocityAnimationEnabled(false);
     showCrosshair();

@@ -76,7 +76,7 @@ public class SupportMapFragmentActivity extends AppCompatActivity implements Map
   @Override
   public void onMapReady(@NonNull MapboxMap map) {
     mapboxMap = map;
-    mapboxMap.setStyle(Style.SATELLITE);
+    mapboxMap.setStyle(Style.MAPIR_DEFAULT_STYLE);
   }
 
   @Override

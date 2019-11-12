@@ -20,7 +20,7 @@ class StyleBuilderTest {
 
     @Test
     fun testFromUrl() {
-        val expected = Style.MAPBOX_STREETS
+        val expected = Style.MAPIR_DEFAULT_STYLE
         val builder = Style.Builder()
         builder.fromUrl(expected)
         assertEquals(expected, builder.uri)

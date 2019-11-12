@@ -145,7 +145,7 @@ public class AttributionParser {
   private String translateImproveThisMapAnchor(String anchor) {
     Context context = this.context.get();
     if (context != null) {
-      anchor = context.getString(R.string.mapbox_telemetryImproveMap);
+      anchor = context.getString(R.string.mapir_telemetryImproveMap);
     }
     return anchor;
   }
@@ -209,7 +209,7 @@ public class AttributionParser {
       Context context = this.context.get();
       attributions.add(
         new Attribution(
-          context != null ? context.getString(R.string.mapbox_telemetrySettings) : Attribution.TELEMETRY,
+          context != null ? context.getString(R.string.mapir_telemetrySettings) : Attribution.TELEMETRY,
           Attribution.TELEMETRY_URL
         )
       );

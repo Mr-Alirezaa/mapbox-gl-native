@@ -34,7 +34,7 @@ public class MapPaddingActivity extends AppCompatActivity {
 
     mapView.getMapAsync(mapboxMap -> {
       MapPaddingActivity.this.mapboxMap = mapboxMap;
-      mapboxMap.setStyle(Style.MAPBOX_STREETS);
+      mapboxMap.setStyle(Style.MAPIR_DEFAULT_STYLE);
 
       int paddingLeft = (int) getResources().getDimension(R.dimen.map_padding_left);
       int paddingBottom = (int) getResources().getDimension(R.dimen.map_padding_bottom);

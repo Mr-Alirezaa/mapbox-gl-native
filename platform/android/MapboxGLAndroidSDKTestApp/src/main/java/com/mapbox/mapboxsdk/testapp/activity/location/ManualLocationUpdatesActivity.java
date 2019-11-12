@@ -109,7 +109,7 @@ public class ManualLocationUpdatesActivity extends AppCompatActivity implements 
   @SuppressLint("MissingPermission")
   @Override
   public void onMapReady(@NonNull MapboxMap mapboxMap) {
-    mapboxMap.setStyle(new Style.Builder().fromUri(Style.MAPBOX_STREETS), style -> {
+    mapboxMap.setStyle(new Style.Builder().fromUri(Style.MAPIR_DEFAULT_STYLE), style -> {
       locationComponent = mapboxMap.getLocationComponent();
 
       locationComponent.activateLocationComponent(

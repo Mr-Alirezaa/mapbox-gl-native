@@ -91,7 +91,7 @@ public class GeoJsonClusteringActivity extends AppCompatActivity {
 
       try {
         mapboxMap.setStyle(new Style.Builder()
-          .fromUri(Style.LIGHT)
+          .fromUri(Style.MAPIR_DEFAULT_STYLE)
           .withSource(clusterSource = createClusterSource())
           .withLayer(createSymbolLayer())
           .withLayer(createClusterLevelLayer(0, clusterLayers))

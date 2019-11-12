@@ -18,10 +18,10 @@ public class MultiMapActivity extends AppCompatActivity {
     setContentView(R.layout.activity_multi_map);
 
     FragmentManager fragmentManager = getSupportFragmentManager();
-    initFragmentStyle(fragmentManager, R.id.map1, Style.MAPBOX_STREETS);
-    initFragmentStyle(fragmentManager, R.id.map2, Style.LIGHT);
-    initFragmentStyle(fragmentManager, R.id.map3, Style.SATELLITE_STREETS);
-    initFragmentStyle(fragmentManager, R.id.map4, Style.DARK);
+    initFragmentStyle(fragmentManager, R.id.map1, Style.MAPIR_DEFAULT_STYLE);
+    initFragmentStyle(fragmentManager, R.id.map2, Style.MAPIR_DEFAULT_STYLE);
+    initFragmentStyle(fragmentManager, R.id.map3, Style.MAPIR_DEFAULT_STYLE);
+    initFragmentStyle(fragmentManager, R.id.map4, Style.MAPIR_DEFAULT_STYLE);
   }
 
   private void initFragmentStyle(FragmentManager fragmentManager, int fragmentId, String styleId) {

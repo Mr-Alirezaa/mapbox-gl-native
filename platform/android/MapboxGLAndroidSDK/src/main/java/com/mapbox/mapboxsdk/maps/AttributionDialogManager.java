@@ -74,7 +74,7 @@ public class AttributionDialogManager implements View.OnClickListener, DialogInt
 
   protected void showAttributionDialog(@NonNull String[] attributionTitles) {
     AlertDialog.Builder builder = new AlertDialog.Builder(context);
-    builder.setTitle(R.string.mapbox_attributionsDialogTitle);
+    builder.setTitle(R.string.mapir_attributionsDialogTitle);
     builder.setAdapter(new ArrayAdapter<>(context, R.layout.mapbox_attribution_list_item, attributionTitles), this);
     dialog = builder.show();
   }
@@ -109,9 +109,9 @@ public class AttributionDialogManager implements View.OnClickListener, DialogInt
 
   private void showTelemetryDialog() {
     AlertDialog.Builder builder = new AlertDialog.Builder(context);
-    builder.setTitle(R.string.mapbox_attributionTelemetryTitle);
-    builder.setMessage(R.string.mapbox_attributionTelemetryMessage);
-    builder.setPositiveButton(R.string.mapbox_attributionTelemetryPositive, new DialogInterface.OnClickListener() {
+    builder.setTitle(R.string.mapir_attributionTelemetryTitle);
+    builder.setMessage(R.string.mapir_attributionTelemetryMessage);
+    builder.setPositiveButton(R.string.mapir_attributionTelemetryPositive, new DialogInterface.OnClickListener() {
       @Override
       public void onClick(@NonNull DialogInterface dialog, int which) {
         TelemetryDefinition telemetry = Mapbox.getTelemetry();
@@ -121,14 +121,14 @@ public class AttributionDialogManager implements View.OnClickListener, DialogInt
         dialog.cancel();
       }
     });
-    builder.setNeutralButton(R.string.mapbox_attributionTelemetryNeutral, new DialogInterface.OnClickListener() {
+    builder.setNeutralButton(R.string.mapir_attributionTelemetryNeutral, new DialogInterface.OnClickListener() {
       @Override
       public void onClick(@NonNull DialogInterface dialog, int which) {
-        showWebPage(context.getResources().getString(R.string.mapbox_telemetryLink));
+        showWebPage(context.getResources().getString(R.string.mapir_telemetryLink));
         dialog.cancel();
       }
     });
-    builder.setNegativeButton(R.string.mapbox_attributionTelemetryNegative, new DialogInterface.OnClickListener() {
+    builder.setNegativeButton(R.string.mapir_attributionTelemetryNegative, new DialogInterface.OnClickListener() {
       @Override
       public void onClick(@NonNull DialogInterface dialog, int which) {
         TelemetryDefinition telemetry = Mapbox.getTelemetry();
@@ -198,7 +198,7 @@ public class AttributionDialogManager implements View.OnClickListener, DialogInt
       context.startActivity(intent);
     } catch (ActivityNotFoundException exception) {
       // explicitly handling if the device hasn't have a web browser installed. #8899
-      Toast.makeText(context, R.string.mapbox_attributionErrorNoBrowser, Toast.LENGTH_LONG).show();
+      Toast.makeText(context, R.string.mapir_attributionErrorNoBrowser, Toast.LENGTH_LONG).show();
       MapStrictMode.strictModeViolation(exception);
     }
   }

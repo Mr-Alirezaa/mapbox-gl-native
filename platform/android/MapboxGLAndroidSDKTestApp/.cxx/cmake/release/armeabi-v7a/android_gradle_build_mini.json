@@ -1,0 +1,170 @@
+{
+  "buildFiles": [
+    "/home/phd/Android/Projects/mapir-gl-native/src/core-files.json",
+    "/home/phd/Android/Projects/mapir-gl-native/platform/android/core-files.json",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/benchmark.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/mapbox-base/mapbox/io/CMakeLists.txt",
+    "/home/phd/Android/Projects/mapir-gl-native/scripts/launch-c.in",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/core.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/mapbox-base/mapbox/CMakeLists.txt",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/boost.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/googletest.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/polylabel.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/CMakeLists.txt",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/mbgl.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/icu.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/vendor.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/mapbox-base/CMakeLists.txt",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/shelf-pack-cpp.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/mason-dependencies.cmake",
+    "/home/phd/Android/SDK/android-ndk-r16b/build/cmake/android.toolchain.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/protozero.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/mapbox-base/extras/CMakeLists.txt",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/doxygen.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/benchmark.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/earcut.hpp.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/benchmark/benchmark-files.json",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/mapbox-base/test/CMakeLists.txt",
+    "/home/phd/Android/Projects/mapir-gl-native/platform/android/filesource-files.json",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/vector-tile.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/xcode.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/cheap-ruler-cpp.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/platform/android/config.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/expected.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/unique_resource.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/test.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/mapbox-base/extras/rapidjson.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/scripts/launch-cxx.in",
+    "/home/phd/Android/Projects/mapir-gl-native/platform/default/filesource-files.json",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/wagyu.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/test/test-files.json",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/expression-test.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/render-test.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/filesource.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/sqlite.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/cmake/mason.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/nunicode.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/geojson-vt-cpp.cmake",
+    "/home/phd/Android/Projects/mapir-gl-native/vendor/eternal.cmake"
+  ],
+  "cleanCommands": [
+    "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" clean"
+  ],
+  "buildTargetsCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "include-test-bundle-Release-armeabi-v7a": {
+      "artifactName": "include-test-bundle",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" include-test-bundle",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/.build-mapbox-gl-native-mapbox-base/test/include-test-bundle"
+    },
+    "include-test-targets-Release-armeabi-v7a": {
+      "artifactName": "include-test-targets",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" include-test-targets",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/.build-mapbox-gl-native-mapbox-base/test/include-test-targets"
+    },
+    "sqlite-Release-armeabi-v7a": {
+      "artifactName": "sqlite",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" sqlite",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/libsqlite.a"
+    },
+    "mapbox-gl-Release-armeabi-v7a": {
+      "artifactName": "mapbox-gl",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" mapbox-gl",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/build/intermediates/cmake/release/obj/armeabi-v7a/libmapbox-gl.so"
+    },
+    "mbgl-test-Release-armeabi-v7a": {
+      "artifactName": "mbgl-test",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" mbgl-test",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/mbgl-test"
+    },
+    "mbgl-vendor-benchmark-Release-armeabi-v7a": {
+      "artifactName": "mbgl-vendor-benchmark",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" mbgl-vendor-benchmark",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/libmbgl-vendor-benchmark.a"
+    },
+    "mbgl-vendor-nunicode-Release-armeabi-v7a": {
+      "artifactName": "mbgl-vendor-nunicode",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" mbgl-vendor-nunicode",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/libmbgl-vendor-nunicode.a"
+    },
+    "mbgl-render-test-Release-armeabi-v7a": {
+      "artifactName": "mbgl-render-test",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" mbgl-render-test",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/mbgl-render-test"
+    },
+    "mbgl-vendor-googletest-Release-armeabi-v7a": {
+      "artifactName": "mbgl-vendor-googletest",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" mbgl-vendor-googletest",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/libmbgl-vendor-googletest.a"
+    },
+    "mbgl-core-Release-armeabi-v7a": {
+      "artifactName": "mbgl-core",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" mbgl-core",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/libmbgl-core.a"
+    },
+    "mapbox-base-io-Release-armeabi-v7a": {
+      "artifactName": "mapbox-base-io",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" mapbox-base-io",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/.build-mapbox-gl-native-mapbox-base/mapbox/io/libmapbox-base-io.a"
+    },
+    "typewrapper-test-Release-armeabi-v7a": {
+      "artifactName": "typewrapper-test",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" typewrapper-test",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/.build-mapbox-gl-native-mapbox-base/test/typewrapper-test"
+    },
+    "mbgl-benchmark-Release-armeabi-v7a": {
+      "artifactName": "mbgl-benchmark",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" mbgl-benchmark",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/mbgl-benchmark"
+    },
+    "weak-test-Release-armeabi-v7a": {
+      "artifactName": "weak-test",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" weak-test",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/.build-mapbox-gl-native-mapbox-base/test/weak-test"
+    },
+    "mbgl-expression-test-Release-armeabi-v7a": {
+      "artifactName": "mbgl-expression-test",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" mbgl-expression-test",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/mbgl-expression-test"
+    },
+    "mbgl-vendor-icu-Release-armeabi-v7a": {
+      "artifactName": "mbgl-vendor-icu",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" mbgl-vendor-icu",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/libmbgl-vendor-icu.a"
+    },
+    "example-custom-layer-Release-armeabi-v7a": {
+      "artifactName": "example-custom-layer",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" example-custom-layer",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/build/intermediates/cmake/release/obj/armeabi-v7a/libexample-custom-layer.so"
+    },
+    "mbgl-filesource-Release-armeabi-v7a": {
+      "artifactName": "mbgl-filesource",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" mbgl-filesource",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/libmbgl-filesource.a"
+    },
+    "io-test-Release-armeabi-v7a": {
+      "artifactName": "io-test",
+      "buildCommand": "/usr/bin/ninja -C \"/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a\" io-test",
+      "abi": "armeabi-v7a",
+      "output": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/release/armeabi-v7a/.build-mapbox-gl-native-mapbox-base/test/io-test"
+    }
+  }
+}

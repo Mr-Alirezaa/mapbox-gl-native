@@ -1,0 +1,88 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "/home/phd/Android/Projects/mapir-gl-native/platform/android",
+      "sdkFolder": "/home/phd/Android/SDK",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/build/intermediates",
+      "gradleModulePathName": ":MapboxGLAndroidSDK",
+      "moduleRootFolder": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK",
+      "makeFile": "/home/phd/Android/Projects/mapir-gl-native/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "/home/phd/Android/Projects/mapir-gl-native/platform/android/.cxx",
+      "cxxFolder": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx",
+      "ndkFolder": "/home/phd/Android/SDK/android-ndk-r16b",
+      "ndkVersion": "16.1.4479499",
+      "ndkSupportedAbiList": [
+        "ARMEABI",
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "MIPS",
+        "MIPS64",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [
+      "-DANDROID_TOOLCHAIN\u003dclang",
+      "-DANDROID_STL\u003dc++_static",
+      "-DANDROID_CPP_FEATURES\u003dexceptions",
+      "-DMBGL_PLATFORM\u003dandroid",
+      "-DMASON_PLATFORM\u003dandroid",
+      "-DNodeJS_EXECUTABLE\u003d/usr/bin/node",
+      "-Dnpm_EXECUTABLE\u003d/usr/bin/npm",
+      "-DANDROID_CCACHE\u003d/usr/bin/ccache"
+    ],
+    "cFlagList": [
+      "-Qunused-arguments"
+    ],
+    "cppFlagsList": [
+      "-Qunused-arguments"
+    ],
+    "variantName": "debug",
+    "soFolder": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/build/intermediates/cmake/debug/lib",
+    "objFolder": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/build/intermediates/cmake/debug/obj",
+    "jsonFolder": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/debug",
+    "gradleBuildOutputFolder": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cxx/debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": [
+      "mapbox-gl"
+    ]
+  },
+  "abi": "ARM64_V8A",
+  "abiPlatformVersion": 21,
+  "cxxBuildFolder": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/debug/arm64-v8a",
+  "jsonFile": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/debug/arm64-v8a/android_gradle_build.json",
+  "gradleBuildOutputFolder": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cxx/debug/arm64-v8a",
+  "objFolder": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/build/intermediates/cmake/debug/obj/arm64-v8a",
+  "buildCommandFile": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/debug/arm64-v8a/build_command.txt",
+  "buildOutputFile": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/debug/arm64-v8a/build_output.txt",
+  "modelOutputFile": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/debug/arm64-v8a/build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cxx/debug/arm64-v8a/CMakeLists.txt",
+    "toolchainWrapperFile": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cxx/debug/arm64-v8a/android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cxx/debug/arm64-v8a/build_generation_state.json",
+    "cacheKeyFile": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cxx/debug/arm64-v8a/compiler_cache_key.json",
+    "compilerCacheUseFile": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cxx/debug/arm64-v8a/compiler_cache_use.json",
+    "compilerCacheWriteFile": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cxx/debug/arm64-v8a/compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cxx/debug/arm64-v8a/compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/debug/arm64-v8a/json_generation_record.json",
+  "compileCommandsJsonFile": "/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDK/.cxx/cmake/debug/arm64-v8a/compile_commands.json"
+}
