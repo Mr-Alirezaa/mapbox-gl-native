@@ -38,12 +38,12 @@ public class QuerySourceFeaturesActivity extends AppCompatActivity {
     setContentView(R.layout.activity_query_source_features);
 
     // Initialize map as normal
-    mapView = (MapView) findViewById(R.id.mapView);
+    mapView = findViewById(R.id.mapView);
     mapView.onCreate(savedInstanceState);
     mapView.getMapAsync(map -> {
       this.mapboxMap = map;
       mapboxMap.getStyle(this::initStyle);
-      mapboxMap.setStyle(Style.MAPBOX_STREETS);
+      mapboxMap.setStyle(Style.MAPIR_DEFAULT_STYLE);
     });
   }
 

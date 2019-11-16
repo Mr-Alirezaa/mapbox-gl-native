@@ -90,12 +90,12 @@ fun SupportMapFragment.getMapAsync(index: Int) {
   this.getMapAsync {
     it.setStyle(
       when (index) {
-        0 -> Style.MAPBOX_STREETS
-        1 -> Style.DARK
-        2 -> Style.SATELLITE
-        3 -> Style.LIGHT
-        4 -> Style.TRAFFIC_NIGHT
-        else -> Style.MAPBOX_STREETS
+        0 -> Style.MAPIR_DEFAULT_STYLE
+        1 -> Style.MAPIR_DEFAULT_STYLE
+        2 -> Style.MAPIR_DEFAULT_STYLE
+        3 -> Style.MAPIR_DEFAULT_STYLE
+        4 -> Style.MAPIR_DEFAULT_STYLE
+        else -> Style.MAPIR_DEFAULT_STYLE
       }
     )
   }

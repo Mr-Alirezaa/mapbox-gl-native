@@ -32,9 +32,9 @@ class StyleTest {
 
     @Test
     fun testFromUrl() {
-        val builder = Style.Builder().fromUrl(Style.MAPBOX_STREETS)
+        val builder = Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE)
         mapboxMap.setStyle(builder)
-        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPBOX_STREETS }
+        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPIR_DEFAULT_STYLE }
     }
 
     @Test
@@ -114,9 +114,9 @@ class StyleTest {
     fun testWithFromLoadingSource() {
         val source = mockk<GeoJsonSource>()
         every { source.id } returns "1"
-        val builder = Style.Builder().fromUrl(Style.MAPBOX_STREETS).withSource(source)
+        val builder = Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE).withSource(source)
         mapboxMap.setStyle(builder)
-        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPBOX_STREETS }
+        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPIR_DEFAULT_STYLE }
         mapboxMap.notifyStyleLoaded()
         verify(exactly = 1) { nativeMapView.addSource(source) }
     }
@@ -125,9 +125,9 @@ class StyleTest {
     fun testWithFromLoadingLayer() {
         val layer = mockk<SymbolLayer>()
         every { layer.id } returns "1"
-        val builder = Style.Builder().fromUrl(Style.MAPBOX_STREETS).withLayer(layer)
+        val builder = Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE).withLayer(layer)
         mapboxMap.setStyle(builder)
-        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPBOX_STREETS }
+        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPIR_DEFAULT_STYLE }
         mapboxMap.notifyStyleLoaded()
         verify(exactly = 1) { nativeMapView.addLayerBelow(layer, MapboxConstants.LAYER_ID_ANNOTATIONS) }
     }
@@ -136,9 +136,9 @@ class StyleTest {
     fun testWithFromLoadingLayerAt() {
         val layer = mockk<SymbolLayer>()
         every { layer.id } returns "1"
-        val builder = Style.Builder().fromUrl(Style.MAPBOX_STREETS).withLayerAt(layer, 1)
+        val builder = Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE).withLayerAt(layer, 1)
         mapboxMap.setStyle(builder)
-        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPBOX_STREETS }
+        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPIR_DEFAULT_STYLE }
         mapboxMap.notifyStyleLoaded()
         verify(exactly = 1) { nativeMapView.addLayerAt(layer, 1) }
     }
@@ -147,9 +147,9 @@ class StyleTest {
     fun testWithFromLoadingLayerBelow() {
         val layer = mockk<SymbolLayer>()
         every { layer.id } returns "1"
-        val builder = Style.Builder().fromUrl(Style.MAPBOX_STREETS).withLayerBelow(layer, "below")
+        val builder = Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE).withLayerBelow(layer, "below")
         mapboxMap.setStyle(builder)
-        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPBOX_STREETS }
+        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPIR_DEFAULT_STYLE }
         mapboxMap.notifyStyleLoaded()
         verify(exactly = 1) { nativeMapView.addLayerBelow(layer, "below") }
     }
@@ -158,9 +158,9 @@ class StyleTest {
     fun testWithFromLoadingLayerAbove() {
         val layer = mockk<SymbolLayer>()
         every { layer.id } returns "1"
-        val builder = Style.Builder().fromUrl(Style.MAPBOX_STREETS).withLayerBelow(layer, "below")
+        val builder = Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE).withLayerBelow(layer, "below")
         mapboxMap.setStyle(builder)
-        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPBOX_STREETS }
+        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPIR_DEFAULT_STYLE }
         mapboxMap.notifyStyleLoaded()
         verify(exactly = 1) { nativeMapView.addLayerBelow(layer, "below") }
     }
@@ -168,9 +168,9 @@ class StyleTest {
     @Test
     fun testWithFromLoadingTransitionOptions() {
         val transitionOptions = TransitionOptions(100, 200)
-        val builder = Style.Builder().fromUrl(Style.MAPBOX_STREETS).withTransition(transitionOptions)
+        val builder = Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE).withTransition(transitionOptions)
         mapboxMap.setStyle(builder)
-        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPBOX_STREETS }
+        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPIR_DEFAULT_STYLE }
         mapboxMap.notifyStyleLoaded()
         verify(exactly = 1) { nativeMapView.transitionOptions = transitionOptions }
     }
@@ -179,9 +179,9 @@ class StyleTest {
     fun testFromCallback() {
         val callback = mockk<Style.OnStyleLoaded>()
         every { callback.onStyleLoaded(any()) } answers {}
-        val builder = Style.Builder().fromUrl(Style.MAPBOX_STREETS)
+        val builder = Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE)
         mapboxMap.setStyle(builder, callback)
-        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPBOX_STREETS }
+        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPIR_DEFAULT_STYLE }
         mapboxMap.notifyStyleLoaded()
         verify(exactly = 1) { callback.onStyleLoaded(any()) }
     }
@@ -234,9 +234,9 @@ class StyleTest {
         mapboxMap.getStyle(callback)
         val source = mockk<GeoJsonSource>()
         every { source.id } returns "1"
-        val builder = Style.Builder().fromUrl(Style.MAPBOX_STREETS).withSource(source)
+        val builder = Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE).withSource(source)
         mapboxMap.setStyle(builder)
-        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPBOX_STREETS }
+        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPIR_DEFAULT_STYLE }
         mapboxMap.notifyStyleLoaded()
         verify(exactly = 1) { nativeMapView.addSource(source) }
         verify(exactly = 1) { callback.onStyleLoaded(any()) }
@@ -250,7 +250,7 @@ class StyleTest {
     @Test
     fun testGetNullWhileLoading() {
         val transitionOptions = TransitionOptions(100, 200)
-        val builder = Style.Builder().fromUrl(Style.MAPBOX_STREETS).withTransition(transitionOptions)
+        val builder = Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE).withTransition(transitionOptions)
         mapboxMap.setStyle(builder)
         Assert.assertNull(mapboxMap.style)
         mapboxMap.notifyStyleLoaded()
@@ -268,26 +268,26 @@ class StyleTest {
         mapboxMap.setStyle(builder)
         verify(exactly = 1) { nativeMapView.styleJson = "{}" }
         mapboxMap.notifyStyleLoaded()
-        mapboxMap.setStyle(Style.MAPBOX_STREETS)
+        mapboxMap.setStyle(Style.MAPIR_DEFAULT_STYLE)
         verify(exactly = 1) { callback.onStyleLoaded(any()) }
     }
 
     @Test(expected = IllegalStateException::class)
     fun testIllegalStateExceptionWithStyleReload() {
-        val builder = Style.Builder().fromUrl(Style.MAPBOX_STREETS)
+        val builder = Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE)
         mapboxMap.setStyle(builder)
         mapboxMap.notifyStyleLoaded()
         val style = mapboxMap.style
-        mapboxMap.setStyle(Style.Builder().fromUrl(Style.DARK))
+        mapboxMap.setStyle(Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE))
         style!!.addLayer(mockk<SymbolLayer>())
     }
 
     @Test
     fun testAddImage() {
         val bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)
-        val builder = Style.Builder().fromUrl(Style.SATELLITE).withImage("id", bitmap)
+        val builder = Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE).withImage("id", bitmap)
         mapboxMap.setStyle(builder)
-        verify(exactly = 1) { nativeMapView.styleUri = Style.SATELLITE }
+        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPIR_DEFAULT_STYLE }
         verify(exactly = 0) { nativeMapView.addImages(any()) }
         mapboxMap.notifyStyleLoaded()
         verify(exactly = 1) { nativeMapView.addImages(any()) }
@@ -298,9 +298,9 @@ class StyleTest {
         val drawable = ShapeDrawable()
         drawable.intrinsicHeight = 10
         drawable.intrinsicWidth = 10
-        val builder = Style.Builder().fromUrl(Style.SATELLITE).withImage("id", drawable)
+        val builder = Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE).withImage("id", drawable)
         mapboxMap.setStyle(builder)
-        verify(exactly = 1) { nativeMapView.styleUri = Style.SATELLITE }
+        verify(exactly = 1) { nativeMapView.styleUri = Style.MAPIR_DEFAULT_STYLE }
         verify(exactly = 0) { nativeMapView.addImages(any()) }
         mapboxMap.notifyStyleLoaded()
         verify(exactly = 1) { nativeMapView.addImages(any()) }

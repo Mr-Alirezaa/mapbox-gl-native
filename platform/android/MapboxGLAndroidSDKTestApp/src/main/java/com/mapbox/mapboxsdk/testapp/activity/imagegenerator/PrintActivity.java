@@ -39,7 +39,7 @@ public class PrintActivity extends AppCompatActivity implements MapboxMap.Snapsh
 
   private void initMap(MapboxMap mapboxMap) {
     this.mapboxMap = mapboxMap;
-    mapboxMap.setStyle(Style.MAPBOX_STREETS);
+    mapboxMap.setStyle(Style.MAPIR_DEFAULT_STYLE);
   }
 
   @Override

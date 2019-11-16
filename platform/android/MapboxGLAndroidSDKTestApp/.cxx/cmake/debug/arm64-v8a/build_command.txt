@@ -1,0 +1,29 @@
+Executable : /usr/bin/cmake
+arguments : 
+-H/home/phd/Android/Projects/mapir-gl-native
+-B/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/debug/arm64-v8a
+-DANDROID_ABI=arm64-v8a
+-DANDROID_PLATFORM=android-21
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/build/intermediates/cmake/debug/obj/arm64-v8a
+-DCMAKE_BUILD_TYPE=Debug
+-DANDROID_NDK=/home/phd/Android/SDK/android-ndk-r16b
+-DCMAKE_C_FLAGS=-Qunused-arguments
+-DCMAKE_CXX_FLAGS=-Qunused-arguments
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
+-DCMAKE_SYSTEM_VERSION=21
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_ANDROID_NDK=/home/phd/Android/SDK/android-ndk-r16b
+-DCMAKE_TOOLCHAIN_FILE=/home/phd/Android/SDK/android-ndk-r16b/build/cmake/android.toolchain.cmake
+-G Ninja
+-DCMAKE_MAKE_PROGRAM=/usr/bin/ninja
+-DANDROID_TOOLCHAIN=clang
+-DANDROID_STL=c++_static
+-DANDROID_CPP_FEATURES=exceptions
+-DMBGL_PLATFORM=android
+-DMASON_PLATFORM=android
+-DNodeJS_EXECUTABLE=/usr/bin/node
+-Dnpm_EXECUTABLE=/usr/bin/npm
+-DANDROID_CCACHE=/usr/bin/ccache
+jvmArgs : 
+

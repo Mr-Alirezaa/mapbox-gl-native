@@ -54,7 +54,7 @@ class NativeMapViewTest : AppCenter() {
     @Test
     @UiThreadTest
     fun testSetStyleUrl() {
-        val expected = Style.DARK
+        val expected = Style.MAPIR_DEFAULT_STYLE
         nativeMapView.styleUri = expected
         val actual = nativeMapView.styleUri
         assertEquals("Style URL should match", expected, actual)

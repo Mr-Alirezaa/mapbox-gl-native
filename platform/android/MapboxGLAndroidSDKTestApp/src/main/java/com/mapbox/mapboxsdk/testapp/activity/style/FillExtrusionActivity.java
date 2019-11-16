@@ -38,7 +38,7 @@ public class FillExtrusionActivity extends AppCompatActivity {
     mapView = findViewById(R.id.mapView);
     mapView.onCreate(savedInstanceState);
     mapView.getMapAsync(mapboxMap -> {
-      mapboxMap.setStyle(Style.MAPBOX_STREETS, style -> {
+      mapboxMap.setStyle(Style.MAPIR_DEFAULT_STYLE, style -> {
         List<List<Point>> lngLats = Collections.singletonList(
           Arrays.asList(
             Point.fromLngLat(5.12112557888031, 52.09071040847704),

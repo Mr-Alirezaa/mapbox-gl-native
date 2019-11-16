@@ -71,7 +71,7 @@ public class DynamicInfoWindowAdapterActivity extends AppCompatActivity implemen
   public void onMapReady(@NonNull MapboxMap map) {
     mapboxMap = map;
 
-    map.setStyle(Style.MAPBOX_STREETS);
+    map.setStyle(Style.MAPIR_DEFAULT_STYLE);
 
     // Add info window adapter
     addCustomInfoWindowAdapter(mapboxMap);

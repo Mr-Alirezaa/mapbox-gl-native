@@ -43,7 +43,7 @@ public class TextureViewResizeActivity extends AppCompatActivity {
   }
 
   private void setupMap(MapboxMap mapboxMap) {
-    mapboxMap.setStyle(Style.MAPBOX_STREETS);
+    mapboxMap.setStyle(Style.MAPIR_DEFAULT_STYLE);
   }
 
   private void setupFab() {

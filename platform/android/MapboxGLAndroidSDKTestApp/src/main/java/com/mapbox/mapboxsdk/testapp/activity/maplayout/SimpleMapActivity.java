@@ -22,7 +22,7 @@ public class SimpleMapActivity extends AppCompatActivity {
     mapView = findViewById(R.id.mapView);
     mapView.onCreate(savedInstanceState);
     mapView.getMapAsync(mapboxMap -> mapboxMap.setStyle(
-      new Style.Builder().fromUri(Style.MAPBOX_STREETS)
+      new Style.Builder().fromUri(Style.MAPIR_DEFAULT_STYLE)
     ));
   }
 

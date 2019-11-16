@@ -50,7 +50,7 @@ public class RealTimeGeoJsonActivity extends AppCompatActivity implements OnMapR
   public void onMapReady(@NonNull final MapboxMap map) {
     mapboxMap = map;
 
-    mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
+    mapboxMap.setStyle(Style.MAPIR_DEFAULT_STYLE, new Style.OnStyleLoaded() {
       @Override
       public void onStyleLoaded(@NonNull Style style) {
         // add source

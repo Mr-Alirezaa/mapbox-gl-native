@@ -1,0 +1,33 @@
+{
+  "ndkFolder": "/home/phd/Android/SDK/android-ndk-r16b",
+  "messages": [
+    {
+      "level": "INFO",
+      "message": "android.ndkVersion from module build.gradle is not set"
+    },
+    {
+      "level": "INFO",
+      "message": "ndk.dir in local.properties is /home/phd/Android/SDK/android-ndk-r16b"
+    },
+    {
+      "level": "INFO",
+      "message": "ANDROID_NDK_HOME environment variable is not set"
+    },
+    {
+      "level": "INFO",
+      "message": "sdkFolder is /home/phd/Android/SDK"
+    },
+    {
+      "level": "INFO",
+      "message": "Considering /home/phd/Android/SDK/android-ndk-r16b by ndk.dir"
+    },
+    {
+      "level": "INFO",
+      "message": "Considering /home/phd/Android/SDK/ndk-bundle in SDK ndk-bundle folder"
+    },
+    {
+      "level": "INFO",
+      "message": "Found requested ndk.dir (/home/phd/Android/SDK/android-ndk-r16b) which has version 16.1.4479499"
+    }
+  ]
+}

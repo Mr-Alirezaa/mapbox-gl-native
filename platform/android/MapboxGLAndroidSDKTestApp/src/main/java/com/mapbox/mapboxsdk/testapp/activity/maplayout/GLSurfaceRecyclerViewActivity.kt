@@ -49,7 +49,7 @@ open class GLSurfaceRecyclerViewActivity : AppCompatActivity() {
   class ItemAdapter(private val activity: GLSurfaceRecyclerViewActivity, private val inflater: LayoutInflater) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val items = listOf(
-      "one", "two", "three", MapItem(Style.MAPBOX_STREETS), "four", "five", MapItem(Style.DARK), "seven", "eight", "nine", "ten",
+      "one", "two", "three", MapItem(Style.MAPIR_DEFAULT_STYLE), "four", "five", MapItem(Style.MAPIR_DEFAULT_STYLE), "seven", "eight", "nine", "ten",
       "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen",
       "nineteen", "twenty", "twenty-one"
     )

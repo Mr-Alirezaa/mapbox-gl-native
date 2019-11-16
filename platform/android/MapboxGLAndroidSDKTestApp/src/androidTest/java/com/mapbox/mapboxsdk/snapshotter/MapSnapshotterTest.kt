@@ -34,7 +34,7 @@ class MapSnapshotterTest {
     rule.activity.runOnUiThread {
       val options = MapSnapshotter.Options(512, 512)
         .withPixelRatio(1.0f)
-        .withStyle(Style.SATELLITE_STREETS)
+        .withStyle(Style.MAPIR_DEFAULT_STYLE)
         .withCameraPosition(
           CameraPosition.Builder()
             .zoom(12.0)

@@ -70,7 +70,7 @@ public class GestureDetectorActivity extends AppCompatActivity {
     mapView.onCreate(savedInstanceState);
     mapView.getMapAsync(mapboxMap -> {
       GestureDetectorActivity.this.mapboxMap = mapboxMap;
-      mapboxMap.setStyle(Style.MAPBOX_STREETS);
+      mapboxMap.setStyle(Style.MAPIR_DEFAULT_STYLE);
       initializeMap();
     });
 

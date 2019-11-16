@@ -124,7 +124,7 @@ public class LocationModesActivity extends AppCompatActivity implements OnMapRea
   public void onMapReady(@NonNull MapboxMap mapboxMap) {
     this.mapboxMap = mapboxMap;
 
-    mapboxMap.setStyle(Style.MAPBOX_STREETS, style -> {
+    mapboxMap.setStyle(Style.MAPIR_DEFAULT_STYLE, style -> {
       locationComponent = mapboxMap.getLocationComponent();
       locationComponent.activateLocationComponent(
         LocationComponentActivationOptions
@@ -233,7 +233,7 @@ public class LocationModesActivity extends AppCompatActivity implements OnMapRea
       return;
     }
 
-    String styleUrl = Style.DARK.equals(mapboxMap.getStyle().getUri()) ? Style.LIGHT : Style.DARK;
+    String styleUrl = Style.MAPIR_DEFAULT_STYLE.equals(mapboxMap.getStyle().getUri()) ? Style.MAPIR_DEFAULT_STYLE : Style.MAPIR_DEFAULT_STYLE;
     mapboxMap.setStyle(new Style.Builder().fromUri(styleUrl));
   }
 

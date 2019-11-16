@@ -25,7 +25,7 @@ public class MaxMinZoomActivity extends AppCompatActivity implements OnMapReadyC
     @Override
     public boolean onMapClick(@NonNull LatLng point) {
       if (mapboxMap != null) {
-        mapboxMap.setStyle(new Style.Builder().fromUri(Style.OUTDOORS));
+        mapboxMap.setStyle(new Style.Builder().fromUri(Style.MAPIR_DEFAULT_STYLE));
       }
       return true;
     }
@@ -46,7 +46,7 @@ public class MaxMinZoomActivity extends AppCompatActivity implements OnMapReadyC
   @Override
   public void onMapReady(@NonNull final MapboxMap map) {
     mapboxMap = map;
-    mapboxMap.setStyle(Style.MAPBOX_STREETS);
+    mapboxMap.setStyle(Style.MAPIR_DEFAULT_STYLE);
     mapboxMap.setMinZoomPreference(3);
     mapboxMap.setMaxZoomPreference(5);
     mapboxMap.addOnMapClickListener(clickListener);

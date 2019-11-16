@@ -189,7 +189,7 @@ class LocationComponentTest : EspressoTest() {
         uiController: UiController,
         context: Context
       ) {
-        mapboxMap.setStyle(Style.Builder().fromUrl(Style.LIGHT))
+        mapboxMap.setStyle(Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE))
 
         component.activateLocationComponent(LocationComponentActivationOptions
                 .builder(context, style)
@@ -642,7 +642,7 @@ class LocationComponentTest : EspressoTest() {
         component.isLocationComponentEnabled = true
         component.forceLocationUpdate(location)
         component.isLocationComponentEnabled = false
-        mapboxMap.setStyle(Style.Builder().fromUrl(Style.LIGHT))
+        mapboxMap.setStyle(Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE))
         component.isLocationComponentEnabled = true
         TestingAsyncUtils.waitForLayer(uiController, mapView)
 
@@ -756,7 +756,7 @@ class LocationComponentTest : EspressoTest() {
         component.onStop()
         component.onStart()
 
-        mapboxMap.setStyle(Style.Builder().fromUrl(Style.DARK))
+        mapboxMap.setStyle(Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE))
         TestingAsyncUtils.waitForLayer(uiController, mapView)
       }
     }
@@ -779,7 +779,7 @@ class LocationComponentTest : EspressoTest() {
                 .useDefaultLocationEngine(false)
                 .build())
         component.isLocationComponentEnabled = true
-        mapboxMap.setStyle(Style.Builder().fromUrl(Style.DARK))
+        mapboxMap.setStyle(Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE))
         component.onStop()
         component.onStart()
         TestingAsyncUtils.waitForLayer(uiController, mapView)
@@ -860,7 +860,7 @@ class LocationComponentTest : EspressoTest() {
                 .build())
         component.isLocationComponentEnabled = true
         component.forceLocationUpdate(location)
-        mapboxMap.setStyle(Style.Builder().fromUrl(Style.LIGHT))
+        mapboxMap.setStyle(Style.Builder().fromUrl(Style.MAPIR_DEFAULT_STYLE))
         component.onStop()
         TestingAsyncUtils.waitForLayer(uiController, mapView)
         component.onStart()

@@ -1,0 +1,2 @@
+ninja: Entering directory `/home/phd/Android/Projects/mapir-gl-native/platform/android/MapboxGLAndroidSDKTestApp/.cxx/cmake/debug/armeabi-v7a'
+ninja: no work to do.

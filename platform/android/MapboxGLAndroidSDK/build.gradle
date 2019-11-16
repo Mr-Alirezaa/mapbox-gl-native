@@ -47,7 +47,7 @@ android {
     nativeBuild(nativeTargets)
 
     // avoid naming conflicts, force usage of prefix
-    resourcePrefix 'mapbox_'
+    resourcePrefix 'mapir_'
 
     sourceSets {
         // limit amount of exposed library resources

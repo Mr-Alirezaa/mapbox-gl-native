@@ -138,7 +138,7 @@ public class MapView extends FrameLayout implements NativeMapView.ViewCallback {
     logoView.setImageDrawable(BitmapUtils.getDrawableFromRes(getContext(), R.drawable.mapbox_logo_icon));
 
     // add accessibility support
-    setContentDescription(context.getString(R.string.mapbox_mapActionDescription));
+    setContentDescription(context.getString(R.string.mapir_mapActionDescription));
     setWillNotDraw(false);
     initialiseDrawingSurface(options);
   }
