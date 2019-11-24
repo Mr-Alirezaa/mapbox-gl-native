@@ -8,8 +8,6 @@ import android.support.annotation.UiThread;
 
 import com.mapbox.mapboxsdk.constants.MapboxConstants;
 import com.mapbox.mapboxsdk.exceptions.MapboxConfigurationException;
-import com.mapbox.mapboxsdk.log.Logger;
-import com.mapbox.mapboxsdk.maps.TelemetryDefinition;
 import com.mapbox.mapboxsdk.net.ConnectivityReceiver;
 import com.mapbox.mapboxsdk.storage.FileSource;
 import com.mapbox.mapboxsdk.utils.ThreadUtils;
@@ -34,8 +32,6 @@ public final class Mapbox {
   @Nullable
   private String accessToken;
   @Nullable
-  private TelemetryDefinition telemetry;
-  @Nullable
   private AccountsManager accounts;
 
   /**
@@ -58,7 +54,6 @@ public final class Mapbox {
       FileSource.initializeFileDirsPaths(appContext);
       INSTANCE = new Mapbox(appContext, accessToken);
       if (isAccessTokenValid(accessToken)) {
-        initializeTelemetry();
         INSTANCE.accounts = new AccountsManager();
       }
       ConnectivityReceiver.instance(appContext);
@@ -89,15 +84,8 @@ public final class Mapbox {
     validateMapbox();
     INSTANCE.accessToken = accessToken;
 
-    // cleanup telemetry which is dependent on an access token
-    if (INSTANCE.telemetry != null) {
-      INSTANCE.telemetry.disableTelemetrySession();
-      INSTANCE.telemetry = null;
-    }
-
     // initialize components dependent on a token
     if (isAccessTokenValid(accessToken)) {
-      initializeTelemetry();
       INSTANCE.accounts = new AccountsManager();
     } else {
       INSTANCE.accounts = null;
@@ -154,29 +142,6 @@ public final class Mapbox {
   public static synchronized Boolean isConnected() {
     validateMapbox();
     return ConnectivityReceiver.instance(INSTANCE.context).isConnected();
-  }
-
-  /**
-   * Initializes telemetry
-   */
-  private static void initializeTelemetry() {
-    try {
-      INSTANCE.telemetry = getModuleProvider().obtainTelemetry();
-    } catch (Exception exception) {
-      String message = "Error occurred while initializing telemetry";
-      Logger.e(TAG, message, exception);
-      MapStrictMode.strictModeViolation(message, exception);
-    }
-  }
-
-  /**
-   * Get an instance of Telemetry if initialised
-   *
-   * @return instance of telemetry
-   */
-  @Nullable
-  public static TelemetryDefinition getTelemetry() {
-    return INSTANCE.telemetry;
   }
 
   /**

@@ -1,2 +1,5 @@
 # ninja log v5
 0	14	0	clean	a7c70eacb11a5051
+0	15	0	clean	a7c70eacb11a5051
+0	10	1574588993	CMakeFiles/example-custom-layer.dir/platform/android/src/example_custom_layer.cpp.o	73c268a36b08d011
+11	101	1574588993	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libexample-custom-layer.so	d702b91f903aa91c
