@@ -3,3 +3,5 @@
 1630	1972	1573561692	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libexample-custom-layer.so	86271281eef8cee9
 0	15	0	clean	a7c70eacb11a5051
 0	17	0	clean	a7c70eacb11a5051
+0	8	1574588993	CMakeFiles/example-custom-layer.dir/platform/android/src/example_custom_layer.cpp.o	bedc80ad0b7a29d8
+8	81	1574588993	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libexample-custom-layer.so	86271281eef8cee9

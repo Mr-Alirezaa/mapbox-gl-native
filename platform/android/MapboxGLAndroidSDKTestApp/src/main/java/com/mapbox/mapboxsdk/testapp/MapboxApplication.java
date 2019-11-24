@@ -7,7 +7,6 @@ import android.text.TextUtils;
 import com.mapbox.mapboxsdk.MapStrictMode;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.log.Logger;
-import com.mapbox.mapboxsdk.maps.TelemetryDefinition;
 import com.mapbox.mapboxsdk.testapp.utils.TileLoadingMeasurementUtils;
 import com.mapbox.mapboxsdk.testapp.utils.TimberLogger;
 import com.mapbox.mapboxsdk.testapp.utils.TokenUtils;
@@ -25,71 +24,66 @@ import static timber.log.Timber.DebugTree;
  */
 public class MapboxApplication extends Application {
 
-  private static final String DEFAULT_MAPBOX_ACCESS_TOKEN = "pk.eyJ1Ijoia2hvc2hyYWZ0YXIiLCJhIjoiY2prNTVoem50MWdiczN3bzI4Y29xMWZhYiJ9.1yhRHTlL5XewC4ZNc6VKEg";
-  private static final String ACCESS_TOKEN_NOT_SET_MESSAGE = "In order to run the Test App you need to set a valid "
-    + "access token. During development, you can set the MAPBOX_ACCESS_TOKEN environment variable for the SDK to "
-    + "automatically include it in the Test App. Otherwise, you can manually include it in the "
-    + "res/values/developer-config.xml file in the MapboxGLAndroidSDKTestApp folder.";
+    private static final String DEFAULT_MAPBOX_ACCESS_TOKEN = "pk.eyJ1Ijoia2hvc2hyYWZ0YXIiLCJhIjoiY2prNTVoem50MWdiczN3bzI4Y29xMWZhYiJ9.1yhRHTlL5XewC4ZNc6VKEg";
+    private static final String ACCESS_TOKEN_NOT_SET_MESSAGE = "In order to run the Test App you need to set a valid "
+            + "access token. During development, you can set the MAPBOX_ACCESS_TOKEN environment variable for the SDK to "
+            + "automatically include it in the Test App. Otherwise, you can manually include it in the "
+            + "res/values/developer-config.xml file in the MapboxGLAndroidSDKTestApp folder.";
 
-  @Override
-  public void onCreate() {
-    super.onCreate();
-    if (!initializeLeakCanary()) {
-      return;
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        if (!initializeLeakCanary()) {
+            return;
+        }
+        initializeLogger();
+        initializeStrictMode();
+        initializeMapbox();
     }
-    initializeLogger();
-    initializeStrictMode();
-    initializeMapbox();
-  }
 
-  protected boolean initializeLeakCanary() {
-    if (LeakCanary.isInAnalyzerProcess(this)) {
-      // This process is dedicated to LeakCanary for heap analysis.
-      // You should not init your app in this process.
-      return false;
+    protected boolean initializeLeakCanary() {
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return false;
+        }
+        LeakCanary.install(this);
+        return true;
     }
-    LeakCanary.install(this);
-    return true;
-  }
 
-  private void initializeLogger() {
-    Logger.setLoggerDefinition(new TimberLogger());
-    if (BuildConfig.DEBUG) {
-      Timber.plant(new DebugTree());
+    private void initializeLogger() {
+        Logger.setLoggerDefinition(new TimberLogger());
+        if (BuildConfig.DEBUG) {
+            Timber.plant(new DebugTree());
+        }
     }
-  }
 
-  private void initializeStrictMode() {
-    StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
-      .detectDiskReads()
-      .detectDiskWrites()
-      .detectNetwork()
-      .penaltyLog()
-      .build());
-    StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
-      .detectLeakedSqlLiteObjects()
-      .penaltyLog()
-      .penaltyDeath()
-      .build());
-  }
-
-  private void initializeMapbox() {
-    String accessToken = TokenUtils.getMapboxAccessToken(getApplicationContext());
-    validateAccessToken(accessToken);
-    Mapbox.getInstance(getApplicationContext(), accessToken);
-    TelemetryDefinition telemetry = Mapbox.getTelemetry();
-    if (telemetry == null) {
-      throw new IllegalStateException("Telemetry was unavailable during test application start.");
+    private void initializeStrictMode() {
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                .detectDiskReads()
+                .detectDiskWrites()
+                .detectNetwork()
+                .penaltyLog()
+                .build());
+        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                .detectLeakedSqlLiteObjects()
+                .penaltyLog()
+                .penaltyDeath()
+                .build());
     }
-    telemetry.setDebugLoggingEnabled(true);
-    TileLoadingMeasurementUtils.setUpTileLoadingMeasurement();
 
-    MapStrictMode.setStrictModeEnabled(true);
-  }
+    private void initializeMapbox() {
+        String accessToken = TokenUtils.getMapboxAccessToken(getApplicationContext());
+        validateAccessToken(accessToken);
+        Mapbox.getInstance(getApplicationContext(), accessToken);
+        TileLoadingMeasurementUtils.setUpTileLoadingMeasurement();
 
-  private static void validateAccessToken(String accessToken) {
-    if (TextUtils.isEmpty(accessToken) || accessToken.equals(DEFAULT_MAPBOX_ACCESS_TOKEN)) {
-      Timber.e(ACCESS_TOKEN_NOT_SET_MESSAGE);
+        MapStrictMode.setStrictModeEnabled(true);
     }
-  }
+
+    private static void validateAccessToken(String accessToken) {
+        if (TextUtils.isEmpty(accessToken) || accessToken.equals(DEFAULT_MAPBOX_ACCESS_TOKEN)) {
+            Timber.e(ACCESS_TOKEN_NOT_SET_MESSAGE);
+        }
+    }
 }

@@ -114,10 +114,10 @@ public class AttributionDialogManager implements View.OnClickListener, DialogInt
     builder.setPositiveButton(R.string.mapir_attributionTelemetryPositive, new DialogInterface.OnClickListener() {
       @Override
       public void onClick(@NonNull DialogInterface dialog, int which) {
-        TelemetryDefinition telemetry = Mapbox.getTelemetry();
-        if (telemetry != null) {
-          telemetry.setUserTelemetryRequestState(true);
-        }
+//        TelemetryDefinition telemetry = Mapbox.getTelemetry();
+//        if (telemetry != null) {
+//          telemetry.setUserTelemetryRequestState(true);
+//        }
         dialog.cancel();
       }
     });
@@ -131,10 +131,10 @@ public class AttributionDialogManager implements View.OnClickListener, DialogInt
     builder.setNegativeButton(R.string.mapir_attributionTelemetryNegative, new DialogInterface.OnClickListener() {
       @Override
       public void onClick(@NonNull DialogInterface dialog, int which) {
-        TelemetryDefinition telemetry = Mapbox.getTelemetry();
-        if (telemetry != null) {
-          telemetry.setUserTelemetryRequestState(false);
-        }
+//        TelemetryDefinition telemetry = Mapbox.getTelemetry();
+//        if (telemetry != null) {
+//          telemetry.setUserTelemetryRequestState(false);
+//        }
         dialog.cancel();
       }
     });
