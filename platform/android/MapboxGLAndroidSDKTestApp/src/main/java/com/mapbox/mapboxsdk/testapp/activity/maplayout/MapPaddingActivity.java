@@ -45,7 +45,6 @@ public class MapPaddingActivity extends AppCompatActivity {
       UiSettings settings = mapboxMap.getUiSettings();
       settings.setLogoMargins(paddingLeft, 0, 0, paddingBottom);
       settings.setCompassMargins(0, paddingTop, paddingRight, 0);
-      settings.setAttributionEnabled(false);
 
       moveToBangalore();
     });

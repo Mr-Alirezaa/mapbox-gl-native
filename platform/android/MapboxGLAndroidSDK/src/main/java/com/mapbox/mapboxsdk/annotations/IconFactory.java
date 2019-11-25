@@ -116,7 +116,7 @@ public final class IconFactory {
    */
   public Icon defaultMarker() {
     if (defaultMarker == null) {
-      defaultMarker = fromResource(R.drawable.mapbox_marker_icon_default);
+      defaultMarker = fromResource(R.drawable.mapir_marker_icon_default);
     }
     return defaultMarker;
   }

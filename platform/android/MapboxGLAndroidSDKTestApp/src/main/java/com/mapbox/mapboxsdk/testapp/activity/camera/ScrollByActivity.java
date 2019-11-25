@@ -66,7 +66,6 @@ public class ScrollByActivity extends AppCompatActivity implements OnMapReadyCal
 
     UiSettings uiSettings = mapboxMap.getUiSettings();
     uiSettings.setLogoEnabled(false);
-    uiSettings.setAttributionEnabled(false);
     FloatingActionButton fab = findViewById(R.id.fab);
     fab.setColorFilter(ContextCompat.getColor(ScrollByActivity.this, R.color.primary));
     fab.setOnClickListener(view -> mapboxMap.scrollBy(

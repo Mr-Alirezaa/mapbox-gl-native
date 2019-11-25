@@ -219,7 +219,7 @@ public class MapboxMapOptions implements Parcelable {
       Drawable compassDrawable = typedArray.getDrawable(
         R.styleable.mapbox_MapView_mapbox_uiCompassDrawable);
       if (compassDrawable == null) {
-        compassDrawable = ResourcesCompat.getDrawable(context.getResources(), R.drawable.mapbox_compass_icon, null);
+        compassDrawable = ResourcesCompat.getDrawable(context.getResources(), R.drawable.mapir_compass_icon, null);
       }
       mapboxMapOptions.compassImage(compassDrawable);
 
@@ -368,9 +368,9 @@ public class MapboxMapOptions implements Parcelable {
   }
 
   /**
-   * Specifies the visibility state of a mapbox_compass_icon for a map view.
+   * Specifies the visibility state of a mapir_compass_icon for a map view.
    *
-   * @param enabled True and mapbox_compass_icon is shown
+   * @param enabled True and mapir_compass_icon is shown
    * @return This
    */
   @NonNull
@@ -380,7 +380,7 @@ public class MapboxMapOptions implements Parcelable {
   }
 
   /**
-   * Specifies the gravity state of mapbox_compass_icon for a map view.
+   * Specifies the gravity state of mapir_compass_icon for a map view.
    *
    * @param gravity Android SDK Gravity.
    * @return This
@@ -392,7 +392,7 @@ public class MapboxMapOptions implements Parcelable {
   }
 
   /**
-   * Specifies the margin state of mapbox_compass_icon for a map view
+   * Specifies the margin state of mapir_compass_icon for a map view
    *
    * @param margins 4 long array for LTRB margins
    * @return This
@@ -404,12 +404,12 @@ public class MapboxMapOptions implements Parcelable {
   }
 
   /**
-   * Specifies if the mapbox_compass_icon fades to invisible when facing north.
+   * Specifies if the mapir_compass_icon fades to invisible when facing north.
    * <p>
    * By default this value is true.
    * </p>
    *
-   * @param compassFadeWhenFacingNorth true is mapbox_compass_icon fades to invisble
+   * @param compassFadeWhenFacingNorth true is mapir_compass_icon fades to invisble
    * @return This
    */
   @NonNull
@@ -421,7 +421,7 @@ public class MapboxMapOptions implements Parcelable {
   /**
    * Specifies the image of the CompassView.
    * <p>
-   * By default this value is R.drawable.mapbox_compass_icon.
+   * By default this value is R.drawable.mapir_compass_icon.
    * </p>
    *
    * @param compass the drawable to show as image compass
@@ -801,36 +801,36 @@ public class MapboxMapOptions implements Parcelable {
   }
 
   /**
-   * Get the current configured visibility state for mapbox_compass_icon for a map view.
+   * Get the current configured visibility state for mapir_compass_icon for a map view.
    *
-   * @return Visibility state of the mapbox_compass_icon
+   * @return Visibility state of the mapir_compass_icon
    */
   public boolean getCompassEnabled() {
     return compassEnabled;
   }
 
   /**
-   * Get the current configured gravity state for mapbox_compass_icon for a map view.
+   * Get the current configured gravity state for mapir_compass_icon for a map view.
    *
-   * @return Gravity state of the mapbox_compass_icon
+   * @return Gravity state of the mapir_compass_icon
    */
   public int getCompassGravity() {
     return compassGravity;
   }
 
   /**
-   * Get the current configured margins for mapbox_compass_icon for a map view.
+   * Get the current configured margins for mapir_compass_icon for a map view.
    *
-   * @return Margins state of the mapbox_compass_icon
+   * @return Margins state of the mapir_compass_icon
    */
   public int[] getCompassMargins() {
     return compassMargins;
   }
 
   /**
-   * Get the current configured state for fading the mapbox_compass_icon when facing north.
+   * Get the current configured state for fading the mapir_compass_icon when facing north.
    *
-   * @return True if mapbox_compass_icon fades to invisible when facing north
+   * @return True if mapir_compass_icon fades to invisible when facing north
    */
   public boolean getCompassFadeFacingNorth() {
     return fadeCompassFacingNorth;
@@ -846,9 +846,9 @@ public class MapboxMapOptions implements Parcelable {
   }
 
   /**
-   * Get the current configured visibility state for mapbox_compass_icon for a map view.
+   * Get the current configured visibility state for mapir_compass_icon for a map view.
    *
-   * @return Visibility state of the mapbox_compass_icon
+   * @return Visibility state of the mapir_compass_icon
    */
   public boolean getLogoEnabled() {
     return logoEnabled;

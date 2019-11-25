@@ -20,8 +20,8 @@ import com.mapbox.mapboxsdk.testapp.utils.IconUtils;
  */
 public class DynamicMarkerChangeActivity extends AppCompatActivity {
 
-  private static final LatLng LAT_LNG_CHELSEA = new LatLng(51.481670, -0.190849);
-  private static final LatLng LAT_LNG_ARSENAL = new LatLng(51.555062, -0.108417);
+  private static final LatLng LAT_LNG_CHELSEA = new LatLng(35.732488, 51.422199);
+  private static final LatLng LAT_LNG_ARSENAL = new LatLng(35.732473, 51.421389);
 
   private MapView mapView;
   private MapboxMap mapboxMap;

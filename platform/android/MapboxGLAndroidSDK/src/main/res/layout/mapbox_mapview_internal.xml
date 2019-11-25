@@ -3,25 +3,25 @@
 
     <com.mapbox.mapboxsdk.maps.widgets.CompassView
         android:id="@+id/compassView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/mapir_compassContentDescription"/>
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/mapir_compassContentDescription" />
 
     <ImageView
-        android:visibility="gone"
         android:id="@+id/logoView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@null"/>
+        android:contentDescription="@null"
+        android:visibility="gone" />
 
     <ImageView
-        android:visibility="gone"
         android:id="@+id/attributionView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:clickable="true"
+        android:contentDescription="@string/mapir_attributionsIconContentDescription"
         android:focusable="true"
-        android:contentDescription="@string/mapir_attributionsIconContentDescription"/>
+        android:visibility="gone" />
 
 </merge>

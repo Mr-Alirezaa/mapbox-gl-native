@@ -83,7 +83,7 @@ public class MapSnapshotterMarkerActivity extends AppCompatActivity implements M
 
   private Bitmap addMarker(MapSnapshot snapshot) {
     Canvas canvas = new Canvas(snapshot.getBitmap());
-    Bitmap marker = BitmapFactory.decodeResource(getResources(), R.drawable.mapbox_marker_icon_default, null);
+    Bitmap marker = BitmapFactory.decodeResource(getResources(), R.drawable.mapir_marker_icon_default, null);
     // Dom toren
     PointF markerLocation = snapshot.pixelForLatLng(new LatLng(52.090649433011315, 5.121310651302338));
     canvas.drawBitmap(marker,

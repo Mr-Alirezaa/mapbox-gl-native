@@ -70,14 +70,12 @@ public class MapView extends FrameLayout implements NativeMapView.ViewCallback {
   private NativeMap nativeMapView;
   @Nullable
   private MapboxMap mapboxMap;
-  private AttributionClickListener attributionClickListener;
   private MapboxMapOptions mapboxMapOptions;
   private MapRenderer mapRenderer;
   private boolean destroyed;
 
   private CompassView compassView;
   private PointF focalPoint;
-  private ImageView attrView;
   private ImageView logoView;
 
   @Nullable
@@ -132,10 +130,8 @@ public class MapView extends FrameLayout implements NativeMapView.ViewCallback {
     // inflate view
     View view = LayoutInflater.from(context).inflate(R.layout.mapbox_mapview_internal, this);
     compassView = view.findViewById(R.id.compassView);
-    attrView = view.findViewById(R.id.attributionView);
-    attrView.setImageDrawable(BitmapUtils.getDrawableFromRes(getContext(), R.drawable.mapbox_info_bg_selector));
     logoView = view.findViewById(R.id.logoView);
-    logoView.setImageDrawable(BitmapUtils.getDrawableFromRes(getContext(), R.drawable.mapbox_logo_icon));
+    logoView.setImageDrawable(BitmapUtils.getDrawableFromRes(getContext(), R.drawable.mapir_logo_icon));
 
     // add accessibility support
     setContentDescription(context.getString(R.string.mapir_mapActionDescription));
@@ -158,7 +154,7 @@ public class MapView extends FrameLayout implements NativeMapView.ViewCallback {
 
     // setup components for MapboxMap creation
     Projection proj = new Projection(nativeMapView, this);
-    UiSettings uiSettings = new UiSettings(proj, focalInvalidator, compassView, attrView, logoView, getPixelRatio());
+    UiSettings uiSettings = new UiSettings(proj, focalInvalidator, compassView, logoView, getPixelRatio());
     LongSparseArray<Annotation> annotationsArray = new LongSparseArray<>();
     IconManager iconManager = new IconManager(nativeMapView);
     Annotations annotations = new AnnotationContainer(nativeMapView, annotationsArray);
@@ -187,9 +183,6 @@ public class MapView extends FrameLayout implements NativeMapView.ViewCallback {
 
     // LocationComponent
     mapboxMap.injectLocationComponent(new LocationComponent(mapboxMap, transform, developerAnimationListeners));
-
-    // inject widgets with MapboxMap
-    attrView.setOnClickListener(attributionClickListener = new AttributionClickListener(context, mapboxMap));
 
     // Ensure this view is interactable
     setClickable(true);
@@ -272,10 +265,6 @@ public class MapView extends FrameLayout implements NativeMapView.ViewCallback {
   @UiThread
   public void onCreate(@Nullable Bundle savedInstanceState) {
     if (savedInstanceState == null) {
-//      TelemetryDefinition telemetry = Mapbox.getTelemetry();
-//      if (telemetry != null) {
-//        telemetry.onAppUserTurnstileEvent();
-//      }
     } else if (savedInstanceState.getBoolean(MapboxConstants.STATE_HAS_SAVED_STATE)) {
       this.savedInstanceState = savedInstanceState;
     }
@@ -387,10 +376,6 @@ public class MapView extends FrameLayout implements NativeMapView.ViewCallback {
    */
   @UiThread
   public void onStop() {
-    if (attributionClickListener != null) {
-      attributionClickListener.onStop();
-    }
-
     if (mapboxMap != null) {
       // map was destroyed before it was started
       mapGestureDetector.cancelAnimators();
@@ -1301,39 +1286,6 @@ public class MapView extends FrameLayout implements NativeMapView.ViewCallback {
     public void onCameraDidChange(boolean animated) {
       if (mapboxMap != null) {
         mapboxMap.onUpdateRegionChange();
-      }
-    }
-  }
-
-  /**
-   * Click event hook for providing a custom attribution dialog manager.
-   */
-  private static class AttributionClickListener implements OnClickListener {
-
-    @NonNull
-    private final AttributionDialogManager defaultDialogManager;
-    private UiSettings uiSettings;
-
-    private AttributionClickListener(@NonNull Context context, @NonNull MapboxMap mapboxMap) {
-      this.defaultDialogManager = new AttributionDialogManager(context, mapboxMap);
-      this.uiSettings = mapboxMap.getUiSettings();
-    }
-
-    @Override
-    public void onClick(View v) {
-      getDialogManager().onClick(v);
-    }
-
-    public void onStop() {
-      getDialogManager().onStop();
-    }
-
-    private AttributionDialogManager getDialogManager() {
-      AttributionDialogManager customDialogManager = uiSettings.getAttributionDialogManager();
-      if (customDialogManager != null) {
-        return uiSettings.getAttributionDialogManager();
-      } else {
-        return defaultDialogManager;
       }
     }
   }

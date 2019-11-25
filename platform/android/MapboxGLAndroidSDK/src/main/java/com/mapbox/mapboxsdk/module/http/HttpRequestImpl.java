@@ -7,6 +7,7 @@ import android.support.annotation.VisibleForTesting;
 import android.text.TextUtils;
 import android.util.Log;
 import com.mapbox.mapboxsdk.BuildConfig;
+import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.constants.MapboxConstants;
 import com.mapbox.mapboxsdk.http.HttpIdentifier;
 import com.mapbox.mapboxsdk.http.HttpLogger;
@@ -69,7 +70,7 @@ public class HttpRequestImpl implements HttpRequest {
         .url(resourceUrl)
         .tag(resourceUrl.toLowerCase(MapboxConstants.MAPBOX_LOCALE))
         .addHeader("User-Agent", userAgentString)
-        .addHeader("x-api-key", "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjU5ZDdkMGExYzZmM2JlYWU3NTU3YTY5ZGQwZmNmMGQ5NDAwZjUzNzE5N2M3M2QxYTkyOTQzZDIwOWQyNjIwMDAyZjVhMDk1MGY5NDkxODk0In0.eyJhdWQiOiI2MjQ3IiwianRpIjoiNTlkN2QwYTFjNmYzYmVhZTc1NTdhNjlkZDBmY2YwZDk0MDBmNTM3MTk3YzczZDFhOTI5NDNkMjA5ZDI2MjAwMDJmNWEwOTUwZjk0OTE4OTQiLCJpYXQiOjE1NjkzOTkwMjYsIm5iZiI6MTU2OTM5OTAyNiwiZXhwIjoxNTcxOTA0NjI2LCJzdWIiOiIiLCJzY29wZXMiOlsiYmFzaWMiXX0.rW5wSXIIzLW_XR_h38fRF9ThnL2xGVhHo8nUUemVi4wZk7JjGk4I8FcHthzKNLBwRx4EFUw0ATX3puyfjBlIA6-euKP-hTcNux8_zczzIkpi9wrSAKNFL254l4fdghnitTsSw6DNQo_NSVYE_Fwt7DWQ_wVum6TFgfv3a_JJ21nbJDSqgQv5qbD__1P3bIll-q84iNGr1XK5q6FJqa___d-3YaW3VqejqbzFuOR2qAt0qtYqn03--ZJYgyWIis2_McACEJAdQgpyPsgEH-E4otuiVdbdvU6CMASqT9fxki40ciLn-jLP1f5V5XKYdyBAScNBRUbPvZXPEuf8U1LIlA");
+        .addHeader("x-api-key", Mapbox.getAccessToken());
       if (etag.length() > 0) {
         builder.addHeader("If-None-Match", etag);
       } else if (modified.length() > 0) {

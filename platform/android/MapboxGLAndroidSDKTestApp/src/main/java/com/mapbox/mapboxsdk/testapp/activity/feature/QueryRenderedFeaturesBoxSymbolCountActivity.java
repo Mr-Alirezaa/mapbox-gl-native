@@ -52,7 +52,7 @@ public class QueryRenderedFeaturesBoxSymbolCountActivity extends AppCompatActivi
 
       try {
         String testPoints = ResourceUtils.readRawResource(mapView.getContext(), R.raw.test_points_utrecht);
-        Bitmap markerImage = BitmapFactory.decodeResource(getResources(), R.drawable.mapbox_marker_icon_default);
+        Bitmap markerImage = BitmapFactory.decodeResource(getResources(), R.drawable.mapir_marker_icon_default);
 
         mapboxMap.setStyle(new Style.Builder()
           .withLayer(
