@@ -93,7 +93,6 @@ public class DoubleMapActivity extends AppCompatActivity {
         UiSettings uiSettings = mapboxMap.getUiSettings();
         uiSettings.setAllGesturesEnabled(false);
         uiSettings.setCompassEnabled(false);
-        uiSettings.setAttributionEnabled(false);
         uiSettings.setLogoEnabled(false);
 
         mapboxMap.addOnMapClickListener(point -> {

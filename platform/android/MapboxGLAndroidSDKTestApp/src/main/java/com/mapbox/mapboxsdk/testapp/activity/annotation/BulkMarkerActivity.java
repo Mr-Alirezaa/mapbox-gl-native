@@ -3,6 +3,8 @@ package com.mapbox.mapboxsdk.testapp.activity.annotation;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -12,6 +14,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
+import com.mapbox.mapboxsdk.camera.CameraPosition;
+import com.mapbox.mapboxsdk.camera.CameraUpdate;
+import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
@@ -111,6 +116,8 @@ public class BulkMarkerActivity extends AppCompatActivity implements AdapterView
     }
 
     mapboxMap.addMarkers(markerOptionsList);
+
+    mapboxMap.animateCamera(CameraUpdateFactory.newLatLngZoom(locations.get(0), 10));
   }
 
   @Override
@@ -179,7 +186,7 @@ public class BulkMarkerActivity extends AppCompatActivity implements AdapterView
       if (activity != null) {
         String json = null;
         try {
-          json = GeoParseUtil.loadStringFromAssets(activity.getApplicationContext(), "points.geojson");
+          json = GeoParseUtil.loadStringFromAssets(activity.getApplicationContext(), "points-sf.geojson");
         } catch (IOException exception) {
           Timber.e(exception, "Could not add markers");
         }

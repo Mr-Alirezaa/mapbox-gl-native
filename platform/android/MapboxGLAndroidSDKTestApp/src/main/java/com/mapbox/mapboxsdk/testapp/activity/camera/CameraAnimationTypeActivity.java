@@ -74,7 +74,6 @@ public class CameraAnimationTypeActivity extends AppCompatActivity implements On
   public void onMapReady(@NonNull MapboxMap map) {
     mapboxMap = map;
     mapboxMap.setStyle(new Style.Builder().fromUri(Style.MAPIR_DEFAULT_STYLE));
-    mapboxMap.getUiSettings().setAttributionEnabled(false);
     mapboxMap.getUiSettings().setLogoEnabled(false);
     mapboxMap.addOnCameraIdleListener(cameraIdleListener);
 

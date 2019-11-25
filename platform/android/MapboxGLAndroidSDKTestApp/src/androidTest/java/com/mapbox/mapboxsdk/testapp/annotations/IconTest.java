@@ -50,7 +50,7 @@ public class IconTest extends EspressoTest {
   @UiThreadTest
   public void testAddDifferentIconMarker() {
     validateTestSetup();
-    Icon icon = IconFactory.getInstance(rule.getActivity()).fromResource(R.drawable.mapbox_logo_icon);
+    Icon icon = IconFactory.getInstance(rule.getActivity()).fromResource(R.drawable.mapir_logo_icon);
     mapboxMap.addMarker(new MarkerOptions().icon(icon).position(new LatLng()));
     mapboxMap.addMarker(new MarkerOptions().position(new LatLng(1, 1)));
     assertEquals(iconMap.size(), 2);
@@ -62,7 +62,7 @@ public class IconTest extends EspressoTest {
   @UiThreadTest
   public void testAddRemoveIconMarker() {
     validateTestSetup();
-    Icon icon = IconFactory.getInstance(rule.getActivity()).fromResource(R.drawable.mapbox_logo_icon);
+    Icon icon = IconFactory.getInstance(rule.getActivity()).fromResource(R.drawable.mapir_logo_icon);
     Marker marker = mapboxMap.addMarker(new MarkerOptions().icon(icon).position(new LatLng()));
     mapboxMap.addMarker(new MarkerOptions().position(new LatLng(1, 1)));
     assertEquals(iconMap.size(), 2);
@@ -101,7 +101,7 @@ public class IconTest extends EspressoTest {
 
     // add 4 unique icon markers
     mapboxMap.addMarker(new MarkerOptions()
-      .icon(iconFactory.fromResource(R.drawable.mapbox_logo_icon))
+      .icon(iconFactory.fromResource(R.drawable.mapir_logo_icon))
       .position(new LatLng(3, 1))
     );
     mapboxMap.addMarker(new MarkerOptions()

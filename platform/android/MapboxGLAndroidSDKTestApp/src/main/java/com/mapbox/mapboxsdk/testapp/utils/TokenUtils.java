@@ -30,7 +30,7 @@ public class TokenUtils {
     } catch (Exception exception) {
       // Use fallback on string resource, used for development
       int tokenResId = context.getResources()
-        .getIdentifier("mapbox_access_token", "string", context.getPackageName());
+        .getIdentifier("mapir_access_token", "string", context.getPackageName());
       return tokenResId != 0 ? context.getString(tokenResId) : null;
     }
   }

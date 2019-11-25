@@ -537,11 +537,11 @@ public class MapSnapshotter {
      * @return the scaled large logo
      */
     private Logo createScaledLogo(@NonNull Bitmap snapshot) {
-        Bitmap logo = BitmapFactory.decodeResource(context.getResources(), R.drawable.mapbox_logo_icon, null);
+        Bitmap logo = BitmapFactory.decodeResource(context.getResources(), R.drawable.mapir_logo_icon, null);
         float scale = calculateLogoScale(snapshot, logo);
         Matrix matrix = new Matrix();
         matrix.postScale(scale, scale);
-        Bitmap helmet = BitmapFactory.decodeResource(context.getResources(), R.drawable.mapbox_logo_helmet, null);
+        Bitmap helmet = BitmapFactory.decodeResource(context.getResources(), R.drawable.mapir_logo_helmet, null);
         Bitmap large = Bitmap.createBitmap(logo, 0, 0, logo.getWidth(), logo.getHeight(), matrix, true);
         Bitmap small = Bitmap.createBitmap(helmet, 0, 0, helmet.getWidth(), helmet.getHeight(), matrix, true);
         return new Logo(large, small, scale);

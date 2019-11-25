@@ -81,7 +81,7 @@ public class LocationComponentActivationActivity extends AppCompatActivity imple
       .elevation(5)
       .accuracyAlpha(.6f)
       .accuracyColor(Color.GREEN)
-      .foregroundDrawable(R.drawable.mapbox_logo_helmet)
+      .foregroundDrawable(R.drawable.mapir_logo_helmet)
       .build();
 
     LocationComponentActivationOptions locationComponentActivationOptions = LocationComponentActivationOptions
