@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.os.Handler;
@@ -15,6 +16,7 @@ import android.support.v4.content.res.ResourcesCompat;
 import android.text.Html;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -444,6 +446,7 @@ public class MapSnapshotter {
         Logo logo = createScaledLogo(snapshot);
         TextView longText = createTextView(mapSnapshot, false, logo.getScale());
         TextView shortText = createTextView(mapSnapshot, true, logo.getScale());
+        TextView openstreet = createOpenStreetTextView(logo.getScale());
 
         return new AttributionMeasure.Builder()
                 .setSnapshot(snapshot)
@@ -507,6 +510,26 @@ public class MapSnapshotter {
         textView.setTextColor(textColor);
         textView.setBackgroundResource(R.drawable.mapbox_rounded_corner);
         textView.setText(Html.fromHtml(createAttributionString(mapSnapshot, shortText)));
+        textView.measure(widthMeasureSpec, heightMeasureSpec);
+        textView.layout(0, 0, textView.getMeasuredWidth(), textView.getMeasuredHeight());
+        return textView;
+    }
+
+
+    private TextView createOpenStreetTextView(float scale) {
+        int widthMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
+        int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
+        TextView textView = new TextView(context);
+        textView.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT)
+        );
+        textView.setSingleLine(true);
+        textView.setTextSize(10 * scale);
+        textView.setTextColor(Color.BLACK);
+        textView.setGravity(Gravity.RIGHT);
+        textView.setBackgroundResource(R.drawable.mapbox_rounded_corner);
+        textView.setText("© Map © OpenStreetMap");
         textView.measure(widthMeasureSpec, heightMeasureSpec);
         textView.layout(0, 0, textView.getMeasuredWidth(), textView.getMeasuredHeight());
         return textView;

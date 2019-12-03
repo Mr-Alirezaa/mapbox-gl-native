@@ -1,20 +1,22 @@
 ext {
-    mapboxArtifactGroupId = 'com.mapbox.mapboxsdk'
-    mapboxArtifactId = 'mapbox-android-sdk'
-    mapboxArtifactTitle = 'Mapbox Maps SDK for Android'
-    mapboxArtifactDescription = 'Mapbox Maps SDK for Android'
-    mapboxDeveloperName = 'Mapbox'
-    mapboxDeveloperId = 'mapbox'
-    mapboxArtifactUrl = 'https://github.com/mapbox/mapbox-gl-native'
-    mapboxArtifactVcsUrl = 'https://github.com/mapbox/mapbox-gl-native.git'
-    mapboxArtifactScmUrl = 'scm:git@github.com:mapbox/mapbox-gl-native.git'
-    mapboxArtifactLicenseName = 'BSD'
-    mapboxArtifactLicenseUrl = 'https://opensource.org/licenses/BSD-2-Clause'
+    mapboxArtifactGroupId = 'ir.map'
+    mapboxArtifactId = 'map-sdk'//project.hasProperty('POM_ARTIFACT_ID') ? project.property('POM_ARTIFACT_ID') : System.getenv('POM_ARTIFACT_ID')
+    mapboxArtifactTitle = 'map-sdk'
+    mapboxArtifactDescription = project.hasProperty('POM_DESCRIPTION') ? project.property('POM_DESCRIPTION') : System.getenv('POM_DESCRIPTION')
+    mapboxDeveloperName = 'map-sdk'
+    mapboxDeveloperEmail = 'support@map.ir'
+    mapboxDeveloperOrganization = 'Map'
+    mapboxDeveloperOrganizationUrl = 'https://www.map.ir'
+    mapboxDeveloperId = 'shivehmapco'
+    mapboxArtifactUrl = 'https://github.com/map-ir/mapir-gl-native'
+    mapboxArtifactVcsUrl = 'https://github.com/map-ir/mapir-gl-native.git'
+    mapboxArtifactScmUrl = 'scm:git@github.com:mapbox/mapbox-java.git'
+    mapboxArtifactLicenseName = 'The Apache Software License, Version 2.0'
+    mapboxArtifactLicenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
     versionName = project.hasProperty('VERSION_NAME') ? project.property('VERSION_NAME') : System.getenv('VERSION_NAME')
-
-    mapboxBintrayUserOrg = 'mapbox'
-    mapboxBintrayRepoName = 'mapbox'
-    mapboxBintrayPackageName = 'com.mapbox.mapboxsdk:mapbox-android-sdk'
+    mapboxBintrayUserOrg = 'shivehmapco'
+    mapboxBintrayRepoName = 'Map'
+    mapboxBintrayPackageName = 'ir.map'
     mapboxBintrayUser = project.hasProperty('BINTRAY_USER') ? project.property('BINTRAY_USER') : System.getenv('BINTRAY_USER')
     mapboxBintrayApiKey = project.hasProperty('BINTRAY_API_KEY') ? project.property('BINTRAY_API_KEY') : System.getenv('BINTRAY_API_KEY')
     mapboxGpgPassphrase = project.hasProperty('GPG_PASSPHRASE') ? project.property('GPG_PASSPHRASE') : System.getenv('GPG_PASSPHRASE')

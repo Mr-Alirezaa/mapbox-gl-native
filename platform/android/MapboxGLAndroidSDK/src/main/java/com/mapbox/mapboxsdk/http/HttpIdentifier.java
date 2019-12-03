@@ -21,6 +21,10 @@ public class HttpIdentifier {
     return getIdentifier(Mapbox.getApplicationContext());
   }
 
+  public static String getPackageName() {
+    return Mapbox.getApplicationContext().getPackageName();
+  }
+
   /**
    * Returns the application identifier, consisting out the package name, version name and version code.
    *

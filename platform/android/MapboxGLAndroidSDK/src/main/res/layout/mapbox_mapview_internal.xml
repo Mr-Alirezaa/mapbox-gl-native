@@ -14,14 +14,15 @@
         android:contentDescription="@null"
         android:visibility="gone" />
 
-    <ImageView
+    <TextView
         android:id="@+id/attributionView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
         android:adjustViewBounds="true"
-        android:clickable="true"
-        android:contentDescription="@string/mapir_attributionsIconContentDescription"
-        android:focusable="true"
-        android:visibility="gone" />
-
+        android:text="@string/map_open_street_map"
+        android:textSize="10sp" />
 </merge>

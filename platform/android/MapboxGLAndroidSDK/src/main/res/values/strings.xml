@@ -17,4 +17,6 @@
     <string name="mapir_telemetryLink" translatable="false">https://www.mapbox.com/telemetry/</string>
 
     <string name="mapir_default_style" translatable="false">https://map.ir/vector/styles/main/main_mobile_style.json</string>
+
+    <string name="map_open_street_map" translatable="false">© Map © OpenStreetMap</string>
 </resources>

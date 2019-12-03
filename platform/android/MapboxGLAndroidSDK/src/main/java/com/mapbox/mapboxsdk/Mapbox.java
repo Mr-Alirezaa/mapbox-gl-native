@@ -41,21 +41,18 @@ public final class Mapbox {
    * </p>
    *
    * @param context     Android context which holds or is an application context
-   * @param accessToken Mapbox access token
+   * @param apiKey Mapbox access token
    * @return the single instance of Mapbox
    */
   @UiThread
   @NonNull
-  public static synchronized Mapbox getInstance(@NonNull Context context, @Nullable String accessToken) {
+  public static synchronized Mapbox getInstance(@NonNull Context context, @Nullable String apiKey) {
     ThreadUtils.init(context);
     ThreadUtils.checkThread(TAG);
     if (INSTANCE == null) {
       Context appContext = context.getApplicationContext();
       FileSource.initializeFileDirsPaths(appContext);
-      INSTANCE = new Mapbox(appContext, accessToken);
-      if (isAccessTokenValid(accessToken)) {
-        INSTANCE.accounts = new AccountsManager();
-      }
+      INSTANCE = new Mapbox(appContext, apiKey);
       ConnectivityReceiver.instance(appContext);
     }
     return INSTANCE;
@@ -83,13 +80,6 @@ public final class Mapbox {
   public static void setAccessToken(String accessToken) {
     validateMapbox();
     INSTANCE.accessToken = accessToken;
-
-    // initialize components dependent on a token
-    if (isAccessTokenValid(accessToken)) {
-      INSTANCE.accounts = new AccountsManager();
-    } else {
-      INSTANCE.accounts = null;
-    }
     FileSource.getInstance(getApplicationContext()).setAccessToken(accessToken);
   }
 

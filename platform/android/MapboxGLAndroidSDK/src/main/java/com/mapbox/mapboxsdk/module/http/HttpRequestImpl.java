@@ -36,13 +36,14 @@ import static com.mapbox.mapboxsdk.module.http.HttpRequestUtil.toHumanReadableAs
 public class HttpRequestImpl implements HttpRequest {
 
   private static final String userAgentString = toHumanReadableAscii(
-    String.format("%s %s (%s) Android/%s (%s)",
-      HttpIdentifier.getIdentifier(),
-      BuildConfig.MAPBOX_VERSION_STRING,
-      BuildConfig.GIT_REVISION_SHORT,
-      Build.VERSION.SDK_INT,
-      Build.CPU_ABI)
+          String.format("Android/%s(%s)(%s)-MapSdk/%s-%s",
+                  Build.VERSION.SDK_INT,
+                  Build.VERSION.RELEASE,
+                  Build.CPU_ABI,
+                  BuildConfig.MAPBOX_SDK_VERSION,
+                  HttpIdentifier.getPackageName())
   );
+
 
   @VisibleForTesting
   static final OkHttpClient DEFAULT_CLIENT = new OkHttpClient.Builder().dispatcher(getDispatcher()).build();
@@ -69,7 +70,7 @@ public class HttpRequestImpl implements HttpRequest {
       final Request.Builder builder = new Request.Builder()
         .url(resourceUrl)
         .tag(resourceUrl.toLowerCase(MapboxConstants.MAPBOX_LOCALE))
-        .addHeader("User-Agent", userAgentString)
+        .addHeader("MapIr-SDK", userAgentString)
         .addHeader("x-api-key", Mapbox.getAccessToken());
       if (etag.length() > 0) {
         builder.addHeader("If-None-Match", etag);
